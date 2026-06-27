@@ -14,21 +14,22 @@ module:
     - path: github.com/shenoydotme/hugo-goa
 
 params:
-  author: "thiagotn"
-  intro: "Homelab, infraestrutura e o que eu aprendo quebrando coisas."
-  description: "Notas pessoais sobre Kubernetes, redes, GitOps e o homelab que roda na minha casa."
+  author: "Thiago Nogueira"
+  intro: "Engenheiro de software. Escrevo sobre homelab e infraestrutura — opiniões minhas, não do meu empregador."
+  description: "Blog pessoal do Thiago Nogueira (thiagotn) — homelab, Kubernetes, infraestrutura e opiniões pessoais."
   authorimage: "eu.jpeg"
   dateformat: "2 Jan 2006"
 
   meta:
-    description: "Blog pessoal do thiagotn — homelab, Kubernetes e infraestrutura."
-    keywords: "homelab,kubernetes,k3s,gitops,devops,infraestrutura"
+    description: "Blog pessoal do Thiago Nogueira (thiagotn) — homelab, Kubernetes, infraestrutura e opiniões pessoais."
+    keywords: "homelab,kubernetes,k3s,gitops,devops,infraestrutura,blog pessoal"
 
   social:
     github: "thiagotn"
+    linkedin: "thiagotn"
 
   extra:
-    copyright: "© 2026 thiagotn. Conteúdo sob [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)."
+    copyright: "© 2026 Thiago Nogueira · blog pessoal, opiniões minhas. Conteúdo sob [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)."
     poweredby: true
     highlightjs: true
     socialmarkup: true
