@@ -1,6 +1,6 @@
 # thiagotn.com — blog
 
-Blog pessoal em **[Hugo](https://gohugo.io/)** com o tema **[Hextra](https://imfing.github.io/hextra/)**,
+Blog pessoal em **[Hugo](https://gohugo.io/)** com o tema **[Goa](https://themes.gohugo.io/themes/hugo-goa/)** (`shenoydotme/hugo-goa`),
 conteúdo em markdown. Publicado no meu homelab k3s (repo de infra `../homelab`).
 
 ## Escrever

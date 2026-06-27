@@ -2,55 +2,46 @@ baseURL: "https://thiagotn.com/"
 title: "thiagotn"
 languageCode: "pt-br"
 defaultContentLanguage: "pt-br"
-enableInlineShortcodes: true
-# enableGitInfo desligado de propósito: o build da imagem (.dockerignore) não inclui o .git,
-# então o lastmod via git não está disponível dentro do container.
+canonifyURLs: false
+buildDrafts: false
+# enableGitInfo desligado: o build da imagem (.dockerignore) não inclui o .git.
 enableGitInfo: false
+
+author: "thiagotn"
 
 module:
   imports:
-    - path: github.com/imfing/hextra
+    - path: github.com/shenoydotme/hugo-goa
 
-markup:
-  goldmark:
-    renderer:
-      unsafe: true
-  highlight:
-    noClasses: false
+params:
+  author: "thiagotn"
+  intro: "Homelab, infraestrutura e o que eu aprendo quebrando coisas."
+  description: "Notas pessoais sobre Kubernetes, redes, GitOps e o homelab que roda na minha casa."
+  authorimage: "eu.jpeg"
+  dateformat: "2 Jan 2006"
+
+  meta:
+    description: "Blog pessoal do thiagotn — homelab, Kubernetes e infraestrutura."
+    keywords: "homelab,kubernetes,k3s,gitops,devops,infraestrutura"
+
+  social:
+    github: "thiagotn"
+
+  extra:
+    copyright: "© 2026 thiagotn. Conteúdo sob [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)."
+    poweredby: true
+    highlightjs: true
+    socialmarkup: true
+    toc: true
+    displayrssicon: true
 
 menu:
   main:
-    - name: Blog
-      pageRef: /blog
-      weight: 1
-    - name: Sobre
-      pageRef: /about
-      weight: 2
-    - name: Search
-      weight: 3
-      params:
-        type: search
-    - name: GitHub
-      weight: 4
-      url: "https://github.com/thiagotn"
-      params:
-        icon: github
-
-params:
-  navbar:
-    displayTitle: true
-    displayLogo: false
-  theme:
-    default: system
-    displayToggle: true
-  footer:
-    displayCopyright: true
-    displayPoweredBy: true
-  editURL:
-    enable: false
-  search:
-    enable: true
-    type: flexsearch
-    flexsearch:
-      index: content
-      tokenize: forward
+    - name: "posts"
+      identifier: "posts"
+      weight: 100
+      url: "posts/"
+    - name: "sobre"
+      identifier: "about"
+      weight: 200
+      url: "about/"

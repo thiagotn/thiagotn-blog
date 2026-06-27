@@ -4,9 +4,9 @@
 FROM hugomods/hugo:exts-0.154.5 AS builder
 ENV HOME=/tmp HUGO_CACHEDIR=/tmp/hugo_cache
 WORKDIR /src
-# go.mod/go.sum primeiro: cacheia o download do módulo Hextra entre builds
+# go.mod/go.sum primeiro: cacheia o download do módulo do tema entre builds
 COPY go.mod go.sum ./
-RUN hugo mod get github.com/imfing/hextra
+RUN hugo mod get github.com/shenoydotme/hugo-goa
 COPY . .
 RUN hugo --minify --gc --destination /public
 
