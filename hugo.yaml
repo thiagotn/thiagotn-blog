@@ -1,0 +1,56 @@
+baseURL: "https://thiagotn.com/"
+title: "thiagotn"
+languageCode: "pt-br"
+defaultContentLanguage: "pt-br"
+enableInlineShortcodes: true
+# enableGitInfo desligado de propósito: o build da imagem (.dockerignore) não inclui o .git,
+# então o lastmod via git não está disponível dentro do container.
+enableGitInfo: false
+
+module:
+  imports:
+    - path: github.com/imfing/hextra
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    noClasses: false
+
+menu:
+  main:
+    - name: Blog
+      pageRef: /blog
+      weight: 1
+    - name: Sobre
+      pageRef: /about
+      weight: 2
+    - name: Search
+      weight: 3
+      params:
+        type: search
+    - name: GitHub
+      weight: 4
+      url: "https://github.com/thiagotn"
+      params:
+        icon: github
+
+params:
+  navbar:
+    displayTitle: true
+    displayLogo: false
+  theme:
+    default: system
+    displayToggle: true
+  footer:
+    displayCopyright: true
+    displayPoweredBy: true
+  editURL:
+    enable: false
+  search:
+    enable: true
+    type: flexsearch
+    flexsearch:
+      index: content
+      tokenize: forward

@@ -1,0 +1,11 @@
+.git
+.github
+.gitignore
+.claude
+.gemini
+README.md
+LICENSE
+# Saída de build e cache do Hugo (regerados no builder). NÃO ignorar content/**/*.md!
+/public
+/resources
+.hugo_build.lock
