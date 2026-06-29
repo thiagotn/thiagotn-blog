@@ -1,0 +1,13 @@
+/* Override do site (sobrescreve o custom.css do tema via precedência do static/). */
+
+/* Imagens de conteúdo: responsivas. O tema (hugo-goa) não define max-width p/ <img> de post,
+   então uma imagem maior que o container (.container = max-width 800px) renderizava no tamanho
+   natural e estourava/cortava (object-fit não; era overflow do container). height:auto evita
+   distorção/corte; centralizada e com cantos arredondados. */
+.content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.2rem auto;
+  border-radius: 8px;
+}
