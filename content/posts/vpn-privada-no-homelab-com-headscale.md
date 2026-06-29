@@ -10,6 +10,8 @@ tags:
   - vpn
 ---
 
+![Ilustração de uma malha privada cifrada: um servidor de casa no centro, ligado por túneis seguros a um laptop e um celular, com a internet pública do lado de fora.](/images/vpn-mesh.png)
+
 Meu homelab fica exposto à internet — os sites respondem nas portas 80 e 443, encaminhadas pelo
 roteador. Mas aí vem o problema: como eu **administro** isso de fora de casa? A API do Kubernetes (a
 "porta da frente de tudo": cria, apaga, lê segredos) e os painéis internos **não podem** ficar
