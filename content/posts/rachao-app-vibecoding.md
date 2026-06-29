@@ -11,6 +11,8 @@ tags:
   - python
 ---
 
+![rachao.app logo](/images/rachao-app-logo.png "rachao.app logo")
+
 Tem ideias que ficam na gaveta por tempo demais. Essa ficou um bom tempo lá, esperando uma janela que nunca chegava — até que uma mudança de rotina abriu espaço pra tirar do papel.
 
 Vale deixar claro desde o início: esse é um **projeto pessoal**, desenvolvido nos horários vagos, sem qualquer relação com meu trabalho. Cerca de 3 horas por dia, em média, ao longo de **15 dias**.
@@ -20,6 +22,8 @@ Vale deixar claro desde o início: esse é um **projeto pessoal**, desenvolvido 
 Jogo futebol com os amigos de infância há anos. Aquele rachão sagrado que a vida vai tornando cada vez mais difícil de manter. Recentemente, com a chegada do Gabriel (meu filho mais novo), o tempo ficou ainda mais disputado. Mas o futebol sempre foi mais do que só jogar — é o pretexto pra manter contato com uma galera que, sem isso, provavelmente se veria muito menos.
 
 Por anos, usamos um app pra organizar as partidas. Funcionou bem, mas com o tempo foi perdendo manutenção. Bugs foram surgindo, funcionalidades pararam de funcionar e reclamar do app virou parte da rotina do rachão. E com toda reclamação, vinha a lista de "seria muito melhor se fosse assim": sorteio de times mais justo, votação dos melhores, controle financeiro, presença via QRCode… A lista existia. O app pra resolver não.
+
+![Um típico campo de futebol comunitário brasileiro](/images/rachao-app-campo.png "rachao.app — um campo de futebol comunitário brasileiro")
 
 ## O problema
 
@@ -51,6 +55,8 @@ O rachao.app é um **PWA**: uma única base de código entrega a experiência de
 | Infra | VPS Hostinger + Traefik v3 |
 | CI/CD | GitHub Actions → GHCR → SSH deploy |
 | Testes E2E | Playwright + pytest |
+
+![diagrama de arquitetura do rachao.app](/images/rachao-app-arquitetura.png "arquitetura do rachao.app")
 
 A escolha de SvelteKit no frontend e Python/FastAPI no backend foi **pessoal** — familiaridade, preferência, o que fazia sentido pra mim naquele momento. Mas vale ressaltar: a arquitetura do projeto é suficientemente desacoplada para que qualquer parte seja reescrita de forma independente. O frontend poderia ser React, Vue, ou qualquer outro framework. O backend poderia ser Rust, Go, Node.js, ou até uma abordagem mais exótica com Datomic ou um banco orientado a documentos. Nada impede que alguém siga os mesmos passos e chegue no mesmo resultado com uma stack completamente diferente — e seria um exercício interessante.
 
