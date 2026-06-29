@@ -15,14 +15,14 @@ module:
 
 params:
   author: "Thiago Nogueira"
-  intro: "Engenheiro de software. Escrevo sobre homelab e infraestrutura — opiniões minhas, não do meu empregador."
-  description: "Blog pessoal do Thiago Nogueira (thiagotn) — homelab, Kubernetes, infraestrutura e opiniões pessoais."
+  intro: "Engenheiro de software. Escrevo sobre software, infraestrutura e o que mais der vontade. Opiniões minhas, não do meu empregador."
+  description: "Blog pessoal do Thiago Nogueira (thiagotn) — software, infraestrutura e o que mais der vontade."
   authorimage: "eu.jpeg"
   dateformat: "2 Jan 2006"
 
   meta:
-    description: "Blog pessoal do Thiago Nogueira (thiagotn) — homelab, Kubernetes, infraestrutura e opiniões pessoais."
-    keywords: "homelab,kubernetes,k3s,gitops,devops,infraestrutura,blog pessoal"
+    description: "Blog pessoal do Thiago Nogueira (thiagotn) — software, infraestrutura e o que mais der vontade."
+    keywords: "software,infraestrutura,homelab,kubernetes,vibecoding,ia,open-source,blog pessoal"
 
   social:
     github: "thiagotn"
