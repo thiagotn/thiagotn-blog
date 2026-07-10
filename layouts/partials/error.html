@@ -1,0 +1,5 @@
+{{/* Override de hugo-goa@d003cbb6361f: texto 404 via i18n (original era hardcoded em inglês) e link home por idioma. */}}
+<section id="error-pane" class="text-center error">
+  <h1 class="text-center">404</h1>
+  <p>{{ i18n "notFoundText" }} <a href="{{ "/" | relLangURL }}">{{ i18n "notFoundLink" }}</a> {{ i18n "notFoundSuffix" }}</p>
+</section>

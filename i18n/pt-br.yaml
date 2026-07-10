@@ -1,0 +1,20 @@
+minRead:
+  other: "min de leitura"
+publishedOn:
+  other: "publicado em"
+prev:
+  other: "anterior"
+next:
+  other: "próximo"
+home:
+  other: "início"
+tags:
+  other: "tags"
+rssFeed:
+  other: "Feed RSS"
+notFoundText:
+  other: "Opa! Essa página não existe. Ela pode ter sido removida ou movida. Clique"
+notFoundLink:
+  other: "aqui"
+notFoundSuffix:
+  other: "para voltar à página inicial."

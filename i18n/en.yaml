@@ -1,0 +1,20 @@
+minRead:
+  other: "min read"
+publishedOn:
+  other: "published on"
+prev:
+  other: "prev"
+next:
+  other: "next"
+home:
+  other: "home"
+tags:
+  other: "tags"
+rssFeed:
+  other: "RSS Feed"
+notFoundText:
+  other: "Sorry! That page does not exist. It may have been removed or moved. Click"
+notFoundLink:
+  other: "here"
+notFoundSuffix:
+  other: "to go back to the home page."

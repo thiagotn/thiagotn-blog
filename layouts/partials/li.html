@@ -1,0 +1,31 @@
+{{/* Override de hugo-goa@d003cbb6361f: data localizada (time.Format), "MIN READ" via i18n, categories com relLangURL. */}}
+<section id="list-pane" class="list">
+  <ul class="list-unstyled">
+    {{ range .Data.Pages.ByPublishDate.Reverse }}
+    <li class="list-entry">
+      <a class="list-entry-link" href="{{ .RelPermalink }}">{{ .Title }}</a>
+      <p class="meta">
+        {{ if not .Date.IsZero }} {{ time.Format (default "Jan 2, 2006" .Site.Params.dateformat) .Date | upper }} {{ end }}
+        - {{ math.Round (div (countwords .Content) 220.0) }} {{ i18n "minRead" | upper }}
+        <span class="category">
+          {{ if isset .Params "categories" }}
+          {{ $total := len .Params.categories }}
+          {{ if gt $total 0 }}
+          —
+          {{ $total := sub $total 1 }}
+          {{ range $i, $cat := sort .Params.categories }}
+          <a class="category-link"
+            href="{{ "/categories/" | relLangURL }}{{ $cat | humanize | urlize }}">{{ $cat | upper }}</a>{{ if lt $i $total }},
+          {{ end }}
+          {{ end }}
+          {{ end }}
+          {{ end }}
+        </span>
+      </p>
+      <p class="excerpt">
+        {{ .Description }}
+      </p>
+    </li>
+    {{ end }}
+  </ul>
+</section>
