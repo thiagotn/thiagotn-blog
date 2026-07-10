@@ -9,7 +9,6 @@ tags:
   - svelte
   - fastapi
   - python
-  - english
 ---
 
 ![rachao.app logo](/images/rachao-app-logo.png "rachao.app logo")

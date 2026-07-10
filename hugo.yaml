@@ -1,7 +1,8 @@
 baseURL: "https://thiagotn.com/"
 title: "thiagotn"
-languageCode: "pt-br"
+# pt-BR na raiz (URLs originais preservadas); inglês sob /en/.
 defaultContentLanguage: "pt-br"
+defaultContentLanguageInSubdir: false
 canonifyURLs: false
 buildDrafts: false
 # enableGitInfo desligado: o build da imagem (.dockerignore) não inclui o .git.
@@ -13,36 +14,67 @@ module:
   imports:
     - path: github.com/shenoydotme/hugo-goa
 
+# Params neutros de idioma. languages.<lang>.params é deep-merged por cima
+# destes: a chave do idioma vence; o que faltar cai para cá.
 params:
   author: "Thiago Nogueira"
-  intro: "Engenheiro de software. Escrevo sobre software, infraestrutura e o que mais der vontade. Opiniões minhas, não do meu empregador."
-  description: "Blog pessoal do Thiago Nogueira (thiagotn) — software, infraestrutura e o que mais der vontade."
   authorimage: "eu.jpeg"
-  dateformat: "2 Jan 2006"
-
-  meta:
-    description: "Blog pessoal do Thiago Nogueira (thiagotn) — software, infraestrutura e o que mais der vontade."
-    keywords: "software,infraestrutura,homelab,kubernetes,vibecoding,ia,open-source,blog pessoal"
-
   social:
     github: "thiagotn"
     linkedin: "thiagotn"
-
   extra:
-    copyright: "© 2026 Thiago Nogueira · blog pessoal, opiniões minhas. Conteúdo sob [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)."
     poweredby: true
     highlightjs: true
     socialmarkup: true
     toc: true
     displayrssicon: true
 
-menu:
-  main:
-    - name: "posts"
-      identifier: "posts"
-      weight: 100
-      url: "posts/"
-    - name: "sobre"
-      identifier: "about"
-      weight: 200
-      url: "about/"
+languages:
+  pt-br:
+    languageCode: "pt-BR"
+    languageName: "Português"
+    weight: 1
+    title: "thiagotn"
+    params:
+      intro: "Engenheiro de software. Escrevo sobre software, infraestrutura e o que mais der vontade. Opiniões minhas, não do meu empregador."
+      description: "Blog pessoal do Thiago Nogueira (thiagotn) — software, infraestrutura e o que mais der vontade."
+      dateformat: "2 Jan 2006"
+      meta:
+        description: "Blog pessoal do Thiago Nogueira (thiagotn) — software, infraestrutura e o que mais der vontade."
+        keywords: "software,infraestrutura,homelab,kubernetes,vibecoding,ia,open-source,blog pessoal"
+      extra:
+        copyright: "© 2026 Thiago Nogueira · blog pessoal, opiniões minhas. Conteúdo sob [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)."
+    menus:
+      main:
+        - name: "posts"
+          identifier: "posts"
+          pageRef: "/posts"
+          weight: 100
+        - name: "sobre"
+          identifier: "about"
+          pageRef: "/about"
+          weight: 200
+  en:
+    languageCode: "en"
+    languageName: "English"
+    weight: 2
+    title: "thiagotn"
+    params:
+      intro: "Software engineer. I write about software, infrastructure and whatever else I feel like. My opinions, not my employer's."
+      description: "Personal blog of Thiago Nogueira (thiagotn) — software, infrastructure and whatever else."
+      dateformat: "Jan 2, 2006"
+      meta:
+        description: "Personal blog of Thiago Nogueira (thiagotn) — software, infrastructure and whatever else."
+        keywords: "software,infrastructure,homelab,kubernetes,vibecoding,ai,open-source,personal blog"
+      extra:
+        copyright: "© 2026 Thiago Nogueira · personal blog, my opinions. Content under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)."
+    menus:
+      main:
+        - name: "posts"
+          identifier: "posts"
+          pageRef: "/posts"
+          weight: 100
+        - name: "about"
+          identifier: "about"
+          pageRef: "/about"
+          weight: 200

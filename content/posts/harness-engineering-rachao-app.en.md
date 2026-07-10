@@ -8,7 +8,6 @@ tags:
   - harness-engineering
   - claude-code
   - anthropic
-  - english
 ---
 
 *Part of the series on the architecture of [rachao.app](https://rachao.app)*

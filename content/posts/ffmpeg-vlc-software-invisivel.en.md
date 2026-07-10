@@ -1,6 +1,7 @@
 ---
 title: "The Invisible Software Running the Internet's Video"
 date: 2026-05-21
+slug: "ffmpeg-vlc-invisible-software"
 tags:
   - ffmpeg
   - vlc
@@ -8,7 +9,6 @@ tags:
   - podcast
   - lex-fridman
   - streaming
-  - english
 ---
 
 *A summary of Lex Fridman Podcast #496 with Jean-Baptiste Kempf and Kieran Cunha*

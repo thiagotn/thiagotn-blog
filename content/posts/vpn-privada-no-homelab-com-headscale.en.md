@@ -1,6 +1,7 @@
 ---
 title: "A private VPN for my homelab: WireGuard, Tailscale and Headscale"
 date: 2026-06-29
+slug: "private-vpn-homelab-wireguard-headscale"
 tags:
   - homelab
   - wireguard
@@ -8,7 +9,6 @@ tags:
   - tailscale
   - networking
   - vpn
-  - english
 ---
 
 ![Illustration of a private encrypted mesh: a home server at the center, linked by secure tunnels to a laptop and a phone, with the public internet kept outside.](/images/vpn-mesh.png)
