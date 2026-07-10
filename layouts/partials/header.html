@@ -65,14 +65,15 @@
     <body lang="{{ .Site.LanguageCode }}">
         <div class="container my-auto">
         {{ if gt (len .Site.Sites) 1 }}
+        {{ $langLabels := dict "pt-br" "🇧🇷 pt-BR" "en" "🇺🇸 EN" }}
         <nav class="lang-switcher text-end" aria-label="Language">
           {{ if .IsTranslated }}
             {{ range .Translations }}
-          <a class="menu-item" href="{{ .RelPermalink }}" hreflang="{{ .Language.LanguageCode }}" lang="{{ .Language.LanguageCode }}">{{ .Language.LanguageName }}</a>
+          <a class="menu-item" href="{{ .RelPermalink }}" hreflang="{{ .Language.LanguageCode }}" lang="{{ .Language.LanguageCode }}">{{ index $langLabels .Language.Lang | default .Language.LanguageName }}</a>
             {{ end }}
           {{ else }}
             {{ range .Site.Sites }}{{ if ne .Language.Lang $.Site.Language.Lang }}
-          <a class="menu-item" href="{{ .Home.RelPermalink }}" hreflang="{{ .Language.LanguageCode }}" lang="{{ .Language.LanguageCode }}">{{ .Language.LanguageName }}</a>
+          <a class="menu-item" href="{{ .Home.RelPermalink }}" hreflang="{{ .Language.LanguageCode }}" lang="{{ .Language.LanguageCode }}">{{ index $langLabels .Language.Lang | default .Language.LanguageName }}</a>
             {{ end }}{{ end }}
           {{ end }}
         </nav>
