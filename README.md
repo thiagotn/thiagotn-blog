@@ -5,10 +5,18 @@ conteúdo em markdown. Publicado no meu homelab k3s (repo de infra `../homelab`)
 
 ## Escrever
 
+Site **bilíngue** (Hugo multilingual): pt-BR na raiz, inglês sob `/en/`.
+
 Conteúdo em `content/`:
-- `content/_index.md` — home.
-- `content/blog/` — posts (um `.md` por post; front matter com `title`, `date`, `tags`).
-- `content/about.md` — sobre.
+- home: gerada pelo tema a partir dos `params` por idioma no `hugo.yaml` (`intro`, `authorimage`…).
+- `content/posts/` — posts. Cada post é um par `foo.md` (pt-BR) + `foo.en.md` (inglês); o Hugo
+  linka a tradução pelo basename. Front matter com `title`, `date`, `tags` (tags são por idioma:
+  `ia`/`ai` etc.). Se quiser URL em inglês diferente do basename, use `slug:` no `.en.md`.
+- `content/about/index.md` + `index.en.md` — sobre.
+- Strings de UI ("min de leitura", prev/next, 404…) em `i18n/pt-br.yaml` e `i18n/en.yaml`.
+- `layouts/partials/` — overrides do tema (que não tem suporte i18n): datas localizadas, strings
+  via i18n, hreflang, language switcher. Cópias do commit pinado do tema; re-diffar contra o
+  upstream antes de atualizar o módulo (`hugo mod get -u`).
 
 Preview local (precisa do Hugo extended, ou use o container abaixo):
 
