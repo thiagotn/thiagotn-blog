@@ -23,3 +23,143 @@
 .lang-switcher a.menu-item {
   text-decoration: none;
 }
+
+/* ── Theme switchers (language + dark/light) ── */
+.switchers {
+  padding: 0.75rem 0 0;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+}
+.switchers a.menu-item,
+.switchers button.menu-item {
+  text-decoration: none;
+}
+.switchers span + span {
+  margin-left: 0.75rem;
+}
+
+/* ── Dark mode ──
+   Overrides the hardcoded light palette in hugo-goa's main.css.
+   Bootstrap 5.3 components adapt automatically via data-bs-theme. */
+[data-bs-theme="dark"] {
+  color-scheme: dark;
+}
+[data-bs-theme="dark"] body {
+  background-color: #0d1117;
+}
+[data-bs-theme="dark"] a,
+[data-bs-theme="dark"] a:hover,
+[data-bs-theme="dark"] a:visited,
+[data-bs-theme="dark"] a:link {
+  color: rgb(209 213 219);
+}
+[data-bs-theme="dark"] .content a {
+  color: rgb(248 113 113);
+}
+[data-bs-theme="dark"] .menu-item {
+  color: rgb(248 113 113) !important;
+}
+[data-bs-theme="dark"] a.meta {
+  color: rgb(248 113 113);
+}
+[data-bs-theme="dark"] .error a {
+  color: rgb(248 113 113);
+}
+[data-bs-theme="dark"] div.content {
+  color: rgb(209 213 219);
+}
+[data-bs-theme="dark"] .excerpt {
+  color: rgb(156 163 175);
+}
+[data-bs-theme="dark"] .description {
+  color: rgb(156 163 175);
+}
+[data-bs-theme="dark"] .intro {
+  color: rgb(209 213 219);
+}
+[data-bs-theme="dark"] .meta,
+[data-bs-theme="dark"] h6.meta {
+  color: rgb(156 163 175);
+}
+[data-bs-theme="dark"] .footer {
+  color: rgb(156 163 175);
+}
+[data-bs-theme="dark"] .category {
+  color: rgb(217 169 123) !important;
+}
+[data-bs-theme="dark"] .social a {
+  color: rgb(147 197 253);
+}
+[data-bs-theme="dark"] .author {
+  color: rgb(209 213 219);
+}
+[data-bs-theme="dark"] .error h1 {
+  color: rgb(156 163 175);
+}
+[data-bs-theme="dark"] .error p {
+  color: rgb(209 213 219);
+}
+[data-bs-theme="dark"] .title {
+  color: rgb(229 231 235);
+}
+/* Highlight.js: toggle light/dark theme based on data-bs-theme. */
+[data-bs-theme="light"] #hljs-light { disabled: false; }
+[data-bs-theme="light"] #hljs-dark  { display: none; }
+[data-bs-theme="dark"]  #hljs-light { display: none; }
+[data-bs-theme="dark"]  #hljs-dark  { display: block; }
+
+/* Code blocks: improve readability in both themes. */
+pre {
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+pre > code {
+  white-space: pre;
+  word-wrap: initial;
+  word-break: initial;
+}
+code {
+  font-size: 0.875em;
+}
+:not(pre) > code {
+  background-color: rgba(0, 0, 0, 0.06);
+  padding: 0.15em 0.35em;
+  border-radius: 4px;
+}
+[data-bs-theme="dark"] :not(pre) > code {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ── Tables ── */
+.content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.2rem 0;
+  font-size: 0.9rem;
+}
+.content th,
+.content td {
+  border: 1px solid #ddd;
+  padding: 0.6rem 0.75rem;
+  text-align: left;
+}
+.content th {
+  font-weight: 600;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+.content tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+[data-bs-theme="dark"] .content th,
+[data-bs-theme="dark"] .content td {
+  border-color: #30363d;
+}
+[data-bs-theme="dark"] .content th {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+[data-bs-theme="dark"] .content tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.02);
+}
