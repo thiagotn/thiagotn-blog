@@ -53,17 +53,11 @@
       if (theme === "system") applyTheme("system");
     });
 
-  // Sync icon and highlight.js theme on first load.
+  // Re-apply theme on every navigation (fallback for anti-FOUC + sync hljs/icon).
   document.addEventListener("DOMContentLoaded", function () {
     var saved = localStorage.getItem(STORAGE_KEY) || "system";
+    applyTheme(saved);
     updateToggleIcon(saved);
-    var effective = saved;
-    if (saved === "system" || !saved) {
-      effective = window.matchMedia("(prefers-color-scheme: dark)").matches
-        ? "dark"
-        : "light";
-    }
-    toggleHighlightStyles(effective);
   });
 
   window.toggleTheme = cycleTheme;

@@ -1,0 +1,24 @@
+{{/* Override de hugo-goa@d003cbb6361f: adiciona ?v= cache-bust no custom.js para
+     forçar re-download quando o arquivo muda (nginx cacheia .js por 30d). */}}
+{{ partial "sub_footer.html" . }}
+</div>
+
+{{ with .Site.Params.extra }}
+{{ if .highlightjs }}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+{{ range .highlightjslanguages }}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/{{.}}.min.js"></script>
+{{ end }}
+
+<script>hljs.highlightAll();</script>
+{{ end }}
+{{ end }}
+
+{{ template "_internal/google_analytics.html" . }}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+<script src="/js/custom.js?v=2"></script>
+</body>
+
+</html>
