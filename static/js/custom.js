@@ -1,5 +1,6 @@
-// Dark/Light mode toggle with localStorage persistence.
-// Complementary to the inline anti-FOUC script in header.html.
+// Dark/Light mode toggle — lightweight fallback.
+// Primary logic lives in the inline header script (header.html).
+// This file re-syncs theme/hljs/icon on DOMContentLoaded as a safety net.
 (function () {
   var STORAGE_KEY = "theme";
 
@@ -11,27 +12,12 @@
         : "light";
     }
     document.documentElement.setAttribute("data-bs-theme", effective);
-    toggleHighlightStyles(effective);
-  }
-
-  function toggleHighlightStyles(effective) {
     var light = document.getElementById("hljs-light");
     var dark = document.getElementById("hljs-dark");
     if (light && dark) {
       light.disabled = effective !== "light";
       dark.disabled = effective !== "dark";
     }
-  }
-
-  function cycleTheme() {
-    var current = localStorage.getItem(STORAGE_KEY) || "system";
-    var next;
-    if (current === "light") next = "dark";
-    else if (current === "dark") next = "system";
-    else next = "light";
-    localStorage.setItem(STORAGE_KEY, next);
-    applyTheme(next);
-    updateToggleIcon(next);
   }
 
   function updateToggleIcon(theme) {
@@ -45,20 +31,9 @@
     if (span) span.textContent = " " + (labels[theme] || "System");
   }
 
-  // Follow OS preference changes when in system mode.
-  window
-    .matchMedia("(prefers-color-scheme: dark)")
-    .addEventListener("change", function () {
-      var theme = localStorage.getItem(STORAGE_KEY) || "system";
-      if (theme === "system") applyTheme("system");
-    });
-
-  // Re-apply theme on every navigation (fallback for anti-FOUC + sync hljs/icon).
   document.addEventListener("DOMContentLoaded", function () {
     var saved = localStorage.getItem(STORAGE_KEY) || "system";
     applyTheme(saved);
     updateToggleIcon(saved);
   });
-
-  window.toggleTheme = cycleTheme;
 })();
