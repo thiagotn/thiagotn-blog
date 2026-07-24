@@ -18,6 +18,8 @@ Nothing special: a desktop mini PC, one of those repurposed corporate machines, 
 processor and enough RAM for a single node. The fun is precisely in fitting a lot into a small,
 silent box that sits in a corner running 24/7.
 
+![The HP ProDesk mini PC that runs the homelab](/images/homelab.jpeg)
+
 ## Kubernetes at home
 
 I run **k3s**, a lightweight Kubernetes distribution. For a single node it's ideal: it boots fast,

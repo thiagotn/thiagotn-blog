@@ -17,6 +17,8 @@ Nada de especial: um mini PC de mesa, dessas máquinas corporativas reaproveitad
 processador modesto e RAM suficiente para um nó único. A graça justamente é fazer bastante coisa
 caber num hardware pequeno e silencioso, ligado 24/7 num canto.
 
+![O mini PC HP ProDesk que roda o homelab](/images/homelab.jpeg)
+
 ## Kubernetes em casa
 
 Rodo o **k3s**, uma distribuição leve de Kubernetes. Para um nó só, é ideal: sobe rápido, pesa
