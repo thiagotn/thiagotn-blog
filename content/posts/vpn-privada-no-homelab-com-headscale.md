@@ -10,7 +10,7 @@ tags:
   - vpn
 ---
 
-![Ilustração de uma malha privada cifrada: um servidor de casa no centro, ligado por túneis seguros a um laptop e um celular, com a internet pública do lado de fora.](/images/vpn-mesh.png)
+![Diagrama da arquitetura da VPN: laptop e celular com o app Tailscale abrem túneis WireGuard até o servidor de casa (k3s, subnet router), coordenados pelo Headscale self-hosted; os serviços internos só são alcançáveis pela malha, e apenas as portas 80/443 dos sites ficam públicas.](/images/vpn-homelab-arquitetura.png)
 
 Meu homelab fica exposto à internet — os sites respondem nas portas 80 e 443, encaminhadas pelo
 roteador. Mas aí vem o problema: como eu **administro** isso de fora de casa? A API do Kubernetes (a

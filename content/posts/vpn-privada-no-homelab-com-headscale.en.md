@@ -11,7 +11,7 @@ tags:
   - vpn
 ---
 
-![Illustration of a private encrypted mesh: a home server at the center, linked by secure tunnels to a laptop and a phone, with the public internet kept outside.](/images/vpn-mesh.png)
+![VPN architecture diagram: a laptop and a phone running the Tailscale app open WireGuard tunnels to the home server (k3s, subnet router), coordinated by the self-hosted Headscale; internal services are only reachable through the mesh, and only the sites' ports 80/443 are public.](/images/vpn-homelab-arquitetura-en.png)
 
 My homelab is exposed to the internet — the sites answer on ports 80 and 443, forwarded by the
 router. But here's the problem: how do I **administer** it from outside the house? The Kubernetes API
