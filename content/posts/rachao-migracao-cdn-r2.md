@@ -1,5 +1,5 @@
 ---
-title: "Adeus Supabase, olá Cloudflare R2 — migrando a CDN de imagens do rachao.app"
+title: "Migrando a CDN de imagens do rachao.app — do Supabase Storage para o Cloudflare R2"
 date: 2026-08-01
 tags:
   - rachao.app
@@ -11,21 +11,21 @@ tags:
   - s3
 ---
 
-No último post contei a história do rachao.app — do vibecoding supervisionado ao produto em produção. Uma das decisões que mencionei de passagem foi a escolha do Supabase como banco. Pois bem: o Supabase acabou de sair de cena. Este post é sobre como e por que migrei a última peça que ainda dependia dele — o storage de avatares — para o Cloudflare R2, e como isso fecha o ciclo de uma migração maior: VPS Hostinger → homelab self-hosted.
+No post anterior sobre o rachao.app, mencionei o Supabase como banco de dados e storage de imagens. Depois da migração para o homelab, o banco já saiu do Supabase — foi para um Postgres 16 rodando no próprio cluster k3s. Sobrou apenas o Storage de avatares como último serviço do Supabase ainda em uso. Este post é sobre como migrei esse recurso para o Cloudflare R2 — um ajuste pontual que fecha o ciclo da saída completa do Supabase e do VPS Hostinger.
 
-## O contexto — ou: como chegamos aqui
+## O contexto
 
-O rachao.app nasceu numa stack clássica de projeto pessoal: VPS Hostinger + Traefik + Supabase (Postgres gerenciado + Storage de imagens). Funcionou bem por meses. Mas em julho de 2026, migrei tudo para o homelab — um HP EliteDesk 800 G3 rodando k3s, atrás de um Cloudflare Tunnel. O banco foi restaurado num Postgres 16 rodando no próprio cluster; a API (em Go) e o frontend (SvelteKit) passaram a rodar como deployments no k3s, gerenciados por Argo CD via GitOps.
+O rachao.app nasceu numa stack clássica de projeto pessoal: VPS Hostinger + Traefik + Supabase (Postgres gerenciado + Storage de imagens). Funcionou bem por meses. Em julho de 2026, migrei a aplicação para o homelab — um HP EliteDesk 800 G3 rodando k3s, atrás de um Cloudflare Tunnel. O banco foi restaurado num Postgres 16 no próprio cluster; a API (em Go) e o frontend (SvelteKit) passaram a rodar como deployments no k3s, gerenciados por Argo CD via GitOps.
 
-Depois desse cutover, sobrou uma pendência: o **Storage do Supabase**. A API Go falava HTTP direto com a Storage API do Supabase para upload e remoção de avatares (WebPs 256×256). Era a única dependência restante — e manter um projeto Supabase inteiro só pra isso não fazia sentido.
+Depois desse cutover, o **Storage do Supabase** era o único serviço restante. A API Go falava HTTP direto com a Storage API para upload e remoção de avatares (WebPs 256×256) — chamadas esporádicas, ~290 KB de imagens no total. Manter um projeto Supabase inteiro só pra isso era desnecessário.
 
-## Por que sair do Supabase Storage?
+## Por que migrar o storage
 
 Dois motivos, um de negócio e um técnico:
 
-**Negócio:** O plano Free do Supabase pausa projetos por inatividade. Como o banco já não estava mais no Supabase — só a Storage API recebia chamadas esporádicas (upload de avatar) — o risco de pausa por inatividade era real. E pausa significava avatares fora do ar. O plano Pro custa US$ 25/mês, o que não se justifica pra ~290 KB de imagens.
+**Negócio:** O plano Free do Supabase pausa projetos por inatividade. Como o banco já não estava mais no Supabase — só a Storage API recebia chamadas esporádicas — o risco de pausa era real. E pausa significava avatares fora do ar. O plano Pro custa US$ 25/mês, o que não se justifica pra ~290 KB de imagens.
 
-**Técnico:** A URL absoluta do Supabase (`https://<ref>.supabase.co/storage/v1/object/public/avatars/…`) estava persistida em `players.avatar_url` no banco. Isso acoplava o domínio do fornecedor aos dados — uma migração futura exigiria backfill de novo. Quanto mais cedo cortasse o vínculo, mais fácil.
+**Técnico:** A URL absoluta do Supabase (`https://<ref>.supabase.co/storage/v1/object/public/avatars/…`) estava persistida em `players.avatar_url` no banco. Isso acoplava o domínio do fornecedor aos dados — uma troca futura de fornecedor exigiria backfill de novo. Quanto antes cortasse o vínculo, mais simples.
 
 ## Cloudflare R2 — a escolha natural
 
@@ -142,9 +142,9 @@ CI/CD  → GitHub Actions → GHCR → Argo CD (GitOps) → k3s
 
 ## Valeu a pena?
 
-Sem dúvida. O aprendizado de fazer uma migração de storage com zero downtime — mantendo compatibilidade com URLs legadas, escrevendo testes contra um S3 fake, atualizando política de privacidade — é o tipo de coisa que se estuda melhor fazendo. Poderia ter deixado o Supabase rodando, mas aí não teria aprendido a integrar R2, não teria exercitado a API S3, e a pendência continuaria lá, acumulando risco.
+O aprendizado de fazer uma migração de storage com zero downtime — mantendo compatibilidade com URLs legadas, escrevendo testes contra um S3 fake, atualizando política de privacidade — é o tipo de coisa que se estuda melhor fazendo. Poderia ter deixado o Supabase rodando, mas aí não teria exercitado a API S3, não teria integrado R2, e a pendência continuaria lá, acumulando risco.
 
-E tem um lado satisfatório em cortar dependências. O rachao.app hoje roda numa infraestrutura que eu entendo ponta a ponta — do túnel da Cloudflare ao pod no k3s. Cada peça tem um motivo pra estar ali, e cada uma pode ser trocada independentemente.
+No fim, foi um ajuste de recurso pontual que eliminou a última dependência externa do projeto. O rachao.app hoje roda numa infraestrutura que eu entendo ponta a ponta — do túnel da Cloudflare ao pod no k3s. Cada peça tem um motivo pra estar ali, e cada uma pode ser trocada independentemente.
 
 ## E você?
 
