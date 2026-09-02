@@ -12,7 +12,7 @@ Lauren Tan abriu a apresentação com uma observação pessoal: depois de anos a
 
 ## A curva de confiança
 
-Lauren descreve sua jornada pessoal em um gráfico que ela mesma admite não ser científico, mas que captura bem a experiência. Há cerca de um ano, quase ninguém usava agents para codar. Quando você começava, entrava num modo de **micromanagement**: supervisionando cada output, promptando constantemente, incapaz de paralelizar além de um ou dois agents porque sequeria confiar no output de um.
+Lauren descreve sua jornada pessoal em um gráfico que ela mesma admite não ser científico, mas que captura bem a experiência. Há cerca de um ano, quase ninguém usava agents para codar. Quando você começava, entrava num modo de **micromanagement**: supervisionando cada output, promptando constantemente, incapaz de paralelizar além de um ou dois agents porque mal conseguia confiar no output de um.
 
 > "Você não consegue spawnar cem agents quando não confia nem no output de um."
 
@@ -26,7 +26,7 @@ Sem verificação, **você é o gargalo**. O agent escreve código, você abre o
 
 ### O caso do Agent Window (Glass)
 
-Quando Lauren entrou no Cursor, foi designada para ajudar no Agent Window (codinome interno: "Glass"), uma aplicação React com prazo de lançamento de uma semana. Ela tentava tomar traces de performance no Chrome DevTools e mandar screenshots para o agent, mas o agent não tinha contexto nenhum do que estava vendo — confidently afirmava ter encontrado o problema, e estava sempre errado.
+Quando Lauren entrou no Cursor, foi designada para ajudar no Agent Window (codinome interno: "Glass"), uma aplicação React com prazo de lançamento de uma semana. Ela tentava tomar traces de performance no Chrome DevTools e mandar screenshots para o agent, mas o agent não tinha contexto nenhum do que estava vendo — afirmava com confiança ter encontrado o problema, e estava sempre errado.
 
 A solução foi construir uma **skill de verificação** (chamada "Control Glass") que ensina o agent a:
 
@@ -34,7 +34,7 @@ A solução foi construir uma **skill de verificação** (chamada "Control Glass
 - Tomar traces de performance
 - Interagir com a UI programaticamente
 
-Mas só isso não bastava. O agent sabia rodar a aplicação, mas não sabia **navegar** — quando alguém reportava "a sidebar está laggy", o agent não sabia o que era a sidebar nem como chegar lá. Foi preciso criar um **feature map**: um arquivo que descreve todas as features da UI, como acessá-las (atalhos de teclado, seletores DOM, atributos para CDP), e o mapeamento entre conceitos de usuário e código.
+Mas só isso não bastava. O agent sabia rodar a aplicação, mas não sabia **navegar** — quando alguém reportava "a sidebar está travando", o agent não sabia o que era a sidebar nem como chegar lá. Foi preciso criar um **feature map**: um arquivo que descreve todas as features da UI, como acessá-las (atalhos de teclado, seletores DOM, atributos para CDP), e o mapeamento entre conceitos de usuário e código.
 
 Com o feature map, até relatórios vagos ou screenshots sem descrição passam a ser úteis. Internamente no Cursor há um canal do Slack onde pessoas mandam screenshots com "???" — o agent consegue interpretar e reproduzir o problema porque tem contexto de navegação.
 
@@ -42,7 +42,7 @@ Com o feature map, até relatórios vagos ou screenshots sem descrição passam 
 
 Lauren criou o **P-Stack** (a sigla é de "Potato Stack" — uma brincadeira com Gary Tan, CEO da YC, que tem o "G-Stack"). O P-Stack é um plugin para Cursor que agrega um conjunto de skills e práticas de engenharia que ela desenvolveu observando agentes falharem.
 
-Ela nunca planejou construir o P-Stack. Tudo começou com a skill do Control Glass, e a partir daí foi incremental: toda vez que observava um agent falhando de um jeito específico, criava uma skill para corrigir aquele comportamento. Um exemplo: o agent confidently afirmava que um bug era causado por X, mas quando ela olhava as tool calls, percebia que o agent nem estava lendo o código relevante. A skill "how" foi criada para forçar o agent a pesquisar e ler código antes de conclusões.
+Ela nunca planejou construir o P-Stack. Tudo começou com a skill do Control Glass, e a partir daí foi incremental: toda vez que observava um agent falhando de um jeito específico, criava uma skill para corrigir aquele comportamento. Um exemplo: o agent afirmava com confiança que um bug era causado por X, mas quando ela olhava as tool calls, percebia que o agent nem estava lendo o código relevante. A skill "how" foi criada para forçar o agent a pesquisar e ler código antes de conclusões.
 
 A analogia com gestão: se você tem um engenheiro brilhante em codificação mas sem contexto de negócio nenhum (acabou de ser contratado), você precisa dar contexto, documentação, instruções. Skills são isso — **markdown que codifica conhecimento** e "puxa o agent para um espaço latente mais inteligente" (como alguns descrevem no Twitter).
 
@@ -73,7 +73,7 @@ Lauren faz um caso contraintuitivo para **rewrites**, especialmente em aplicaç�
 
 - **Aplicações brownfield** (grandes codebases com guardrails já estabelecidos, como Meta e Google) estão em boa posição. Essas empresas já projetam tudo para o engenheiro menos capaz — frameworks, convenções, guardrails, restrições de credenciais. Antes do "AI slop" já existia o "human slop". Esses guardrails servem perfeitamente para agents.
 
-- **Aplicações greenfield** são o maior risco e a maior oportunidade. Quando você vibe-coda um protótipo (como o Grokbot, lançado no dia anterior à apresentação), humanos não leem o código. Sem guardrails, agents resolvem cada task da forma mais conveniente, e o codebase espirala fora de controle.
+- **Aplicações greenfield** são o maior risco e a maior oportunidade. Quando você vibe-coda um protótipo (como o Grokbot, lançado no dia anterior à apresentação), humanos não leem o código. Sem guardrails, agents resolvem cada task da forma mais conveniente, e o codebase perde o controle completamente.
 
 O Grokbot foi vibe-coded muito rápido. Lauren passou **mais de 600 PRs** refatorando o Grokbot para uma nova arquitetura (codinome "Dune"). Agora ela não olha mais o código — e diz isso não para vender tokens, mas porque investiu muito para chegar nesse ponto.
 
@@ -120,7 +120,7 @@ Lauren nota que Rust está ganhando popularidade novamente justamente porque o c
 Lauren reconhece que trabalha num AI lab com tokens ilimitados, e que nem todo mundo está nessa situação. Mas argumenta que é uma questão de ROI:
 
 - Sim, refatorar um codebase custa muitos tokens no início.
-- Mas se estamos indo para um mundo onde agents escrevem todo o código, você quer ser enxuto e nimble, não virar uma org de 10.000 engenheiros.
+- Mas se estamos indo para um mundo onde agents escrevem todo o código, você quer ser enxuto e ágil, não virar uma org de 10.000 engenheiros.
 - O valor dos agents não é apenas economizar tokens em cada task — é permitir fazer coisas que você não poderia fazer antes. Lauren, como única pessoa, construiu uma framework que teria levado anos.
 - Mesmo agents que não são front-tier passam a escrever código excelente quando o codebase tem constraints fortes.
 
