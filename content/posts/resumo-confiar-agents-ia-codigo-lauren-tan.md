@@ -4,7 +4,7 @@ date: 2026-09-02
 tags: ["engenharia", "ia", "agentes", "gestão"]
 ---
 
-> *Resumo da apresentação de Lauren Tan (conhecida como @potato_en no Twitter), engenheira do Cursor (ex-Meta/React, ex-Netflix), em sessão ao vivo sobre como escalar o uso de agents de IA para escrever código — da desconfiança total ao auto-merge de 20 PRs por dia. A apresentação foi realizada em 12 de setembro de 2026.*
+> *Resumo da apresentação de Lauren Tan (conhecida como @poteto no Twitter), engenheira do Cursor (ex-Meta/React, ex-Netflix), em sessão ao vivo sobre como escalar o uso de agents de IA para escrever código — da desconfiança total ao auto-merge de 20 PRs por dia. A apresentação foi realizada em 12 de setembro de 2026.*
 
 ---
 
@@ -146,4 +146,4 @@ A mensagem central: não há atalho. Você sobe a curva construindo trust increm
 
 ---
 
-*Apresentação de Lauren Tan (@potato_en), engenheira do Cursor, em sessão ao vivo em 12 de setembro de 2026. Para mais detalhes sobre o P-Stack, procure "pstack cursor" no Google. Para perguntas, Lauren abre DMs no Twitter.*
+*Apresentação de Lauren Tan (@poteto), engenheira do Cursor, em sessão ao vivo em 12 de setembro de 2026. Para mais detalhes sobre o P-Stack, procure "pstack cursor" no Google. Para perguntas, Lauren abre DMs no Twitter.*
