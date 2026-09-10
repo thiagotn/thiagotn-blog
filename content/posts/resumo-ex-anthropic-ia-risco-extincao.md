@@ -6,6 +6,8 @@ tags: ["ia", "segurança", "antropocêntrica", "alinhamento"]
 
 > *Resumo da entrevista de Jacob Coxon, ex-pesquisador da Anthropic (também passou pela OpenAI), ao canal CNN. Coxon deixou a empresa 7 semanas antes da IPO para alertar publicamente sobre os riscos de extinção humana por IA. O vídeo tem 9 minutos e 26 segundos e foi publicado em 10 de setembro de 2026.*
 
+![Robôs controlados por IA marchando sobre cidade destruída](/images/ia-risco-extincao.jpeg "IA e o risco de extinção humana")
+
 ---
 
 ## O alerta
