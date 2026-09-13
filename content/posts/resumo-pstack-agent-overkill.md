@@ -6,7 +6,7 @@ tags: ["agentes", "ia", "engenharia", "produtividade"]
 
 > Resumo detalhado do vídeo ["Pstack Is Agent Overkill. Use It Anyway!"](https://youtu.be/lUhXa8GiXns) do canal **Rob Shocks**, publicado em setembro de 2026.
 
-Se você está construindo agentes de codificação ou usando qualquer tipo de software factory, precisa conhecer o **Pstack** — um conjunto de skills criado por **Lauren Tan**, engenheira que passou por Netflix, core team do React, SpaceX e Cursor. É basicamente o cérebro de uma engenheira sênior extraído para dentro de uma stack. Como o próprio Rob Shocks diz: mesmo que você não use o Pstack, só de ler as skills já vale pelo aprendizado de como um praticante sério de agentes trabalha em escala.
+Se você está construindo agentes de codificação ou usando qualquer tipo de fábrica de software, precisa conhecer o **Pstack** — um conjunto de skills criado por **Lauren Tan**, engenheira que passou por Netflix, core team do React, SpaceX e Cursor. É basicamente o cérebro de uma engenheira sênior extraído para dentro de uma stack. Como o próprio Rob Shocks diz: mesmo que você não use o Pstack, só de ler as skills já vale pelo aprendizado de como um praticante sério de agentes trabalha em escala.
 
 ---
 
@@ -22,11 +22,11 @@ Você pode rodar o Pstack em qualquer agente: Cursor, Claude Code, Codex, OpenCo
 
 ---
 
-## Potato Mode: o router do Pstack
+## Potato Mode: o roteador do Pstack
 
-O coração do Pstack é o **potato mode** — essencialmente um router que ajuda a decidir qual das 20+ skills você deve usar primeiro. A skill tree contém 22 playbooks com exemplos para diferentes casos de uso.
+O coração do Pstack é o **potato mode** — essencialmente um roteador que ajuda a decidir qual das 20+ skills você deve usar primeiro. A árvore de skills contém 22 playbooks com exemplos para diferentes casos de uso.
 
-Rob dá um prompt de teste ao potato mode e ele faz o roteamento para o playbook "figure it out". Vale destacar: o Pstack **não é feito para spec e planning**. É desenhado para operar em uma codebase estabelecida. A opinião pessoal de Lauren sobre isso é direta:
+Rob dá um prompt de teste ao potato mode e ele faz o roteamento para o playbook "figure it out". Vale destacar: o Pstack **não é feito para spec e planejamento**. É desenhado para operar em uma codebase estabelecida. A opinião pessoal de Lauren sobre isso é direta:
 
 > "Eu não acredito em planning. A melhor spec é o código."
 
@@ -38,7 +38,7 @@ Então não há skill de planejamento embutida no Pstack — propositalmente.
 
 ### Arena
 
-Se você tem uma feature crítica para desenvolver e tokens não são um problema, pode rodar a skill **arena**. Ela coloca três ou quatro agentes diferentes (Claude, GPT, Grok, Claude Opus 5) para trabalhar no mesmo problema, pega as melhores partes de cada um e junta em um commit final. A ideia é fazer todos "lutarem" para chegar na melhor solução e depois escolher as melhores partes de cada design.
+Se você tem uma funcionalidade crítica para desenvolver e tokens não são um problema, pode rodar a skill **arena**. Ela coloca três ou quatro agentes diferentes (Claude, GPT, Grok, Claude Opus 5) para trabalhar no mesmo problema, pega as melhores partes de cada um e junta em um commit final. A ideia é fazer todos "lutarem" para chegar na melhor solução e depois escolher as melhores partes de cada design.
 
 Com base no que cada sub-agente aprendeu trabalhando no problema, o arena decide se enxerta (graft) ou rejeita (reject) as contribuições.
 
@@ -52,11 +52,11 @@ A skill de TDD cria os testes unitários primeiro e só então faz eles passarem
 
 ### Why
 
-A skill **why** é uma das mais interessantes. Em vez de apenas checar o transcript do projeto, ela percorre todos os MCPs e CLIs relevantes ao projeto. Pode checar informações de produto no PostHog, ir numa conversa no Slack sobre por que uma feature foi implementada, puxar logs do Sentry para entender o contexto, e encontrar ADRs (Architecture Decision Records) sobre decisões tomadas. Rob diz: "definitivamente roubando essa."
+A skill **why** é uma das mais interessantes. Em vez de apenas checar a transcrição do projeto, ela percorre todos os MCPs e CLIs relevantes ao projeto. Pode checar informações de produto no PostHog, ir numa conversa no Slack sobre por que uma funcionalidade foi implementada, puxar logs do Sentry para entender o contexto, e encontrar ADRs (Architecture Decision Records) sobre decisões tomadas. Rob diz: "definitivamente roubando essa."
 
 ### Recall
 
-**Recall** é fantástica para quando você quer retomar um projeto que deixou parado há uma semana. Ela escaneia todos os transcripts e usa a skill **why** para checar seus MCPs (Notion, Linear, PostHog) e descobrir onde você parou e o que precisa fazer a seguir.
+**Recall** é fantástica para quando você quer retomar um projeto que deixou parado há uma semana. Ela escaneia todas as transcrições e usa a skill **why** para checar seus MCPs (Notion, Linear, PostHog) e descobrir onde você parou e o que precisa fazer a seguir.
 
 ### Interrogate
 
@@ -64,7 +64,7 @@ Na fase de validação, a skill **interrogate** coloca dois ou três modelos dif
 
 ### Create Verification
 
-Essa skill cria sua própria forma scriptada de provar o comportamento do app. Como o app tem uma grande área de superfície (múltiplos projetos, setups, scanning contínuo), há muito espaço para parecer estar funcionando mas estar fundamentalmente quebrado ou devolvendo dados errados. A skill cria um conjunto de scripts de verificação e checagens cruzadas. Rob destaca:
+Essa skill cria sua própria forma scriptada de provar o comportamento do app. Como o app tem uma grande área de superfície (múltiplos projetos, configurações, scanning contínuo), há muito espaço para parecer estar funcionando mas estar fundamentalmente quebrado ou devolvendo dados errados. A skill cria um conjunto de scripts de verificação e checagens cruzadas. Rob destaca:
 
 > "Quando você está lidando com agentes não-determinísticos, esse tipo de passo de verificação é simplesmente valioso demais."
 
@@ -78,20 +78,20 @@ A skill **onslaught** é um presente para quem usa agentes para qualquer tipo de
 
 ### Brawl
 
-Se você rodou muitos agentes em paralelo e seu cérebro está coming to a halt, pode rodar a skill **brawl**, que reformula a última mensagem em linguagem humana simples, sem jargão. "Um presente absoluto para a clareza, particularmente quando seu cérebro está queimando em 10 agentes diferentes."
+Se você rodou muitos agentes em paralelo e seu cérebro está chegando ao limite, pode rodar a skill **brawl**, que reformula a última mensagem em linguagem humana simples, sem jargão. "Um presente absoluto para a clareza, particularmente quando seu cérebro está queimando em 10 agentes diferentes."
 
 ---
 
-## Show Me Your Work: o trabalho de um engenheiro
+## Mostre seu trabalho: o trabalho de um engenheiro
 
 A skill **show me your work** revela muito sobre como o Pstack opera. Rob rodou um único prompt e acompanhou todo o processo:
 
-1. **Probing** — um teste rápido para ver se o que queremos alcançar é sequer possível, sem construir o app inteiro
-2. **Framing** — entender os requisitos e constraints (ex.: quer rodar no Mac, mas eventualmente em outros sistemas)
+1. **Exploração** — um teste rápido para ver se o que queremos alcançar é sequer possível, sem construir o app inteiro
+2. **Enquadramento** — entender os requisitos e restrições (ex.: quer rodar no Mac, mas eventualmente em outros sistemas)
 3. **Scaffolding básico** — antes de entrar na fase de arena com 4 agentes paralelos
-4. **Design changes forced by reality** — um ponto crucial. Quando o agente cria um plano detalhado de antemão, ainda não lidou com a realidade. É só durante a construção que as suposições são quebradas e é preciso refazer o plano em tempo real
-5. **Verification testing** — fase de testes e verificação
-6. **Audit** — auditoria final, onde o agente identificou que havia alucinado alguns detalhes e corrigiu 3 afirmações falsas
+4. **Mudanças de design impostas pela realidade** — um ponto crucial. Quando o agente cria um plano detalhado de antemão, ainda não lidou com a realidade. É só durante a construção que as suposições são quebradas e é preciso refazer o plano em tempo real
+5. **Testes de verificação** — fase de testes e verificação
+6. **Auditoria** — auditoria final, onde o agente identificou que havia alucinado alguns detalhes e corrigiu 3 afirmações falsas
 
 ---
 
@@ -100,7 +100,7 @@ A skill **show me your work** revela muito sobre como o Pstack opera. Rob rodou 
 | Princípio | O que significa |
 |---|---|
 | **Laziness Protocol** | Ao refatorar, procure deletar código em vez de adicionar. Mire na menor mudança possível para fazer o trabalho — isso leva a código mais sustentável |
-| **Redesigning from First Principles** | Ao adicionar uma feature, imagine como o código seria se ela existisse desde o dia 1. Pode envolver remover estruturas para chegar ao "happy place" |
+| **Redesigning from First Principles** | Ao adicionar uma funcionalidade, imagine como o código seria se ela existisse desde o dia 1. Pode envolver remover estruturas para chegar ao "estado ideal" |
 | **Minimizing Reader Load** | Chega de PRs gigantes escritos por agentes com código desconexo em múltiplas abstrações. Mantenha simples com o mínimo de abstrações |
 | **Exhaust the Design Space** | Use o arena: múltiplos modelos/agentes no mesmo problema, pegue o melhor de cada |
 | **Build a Lever** | Se você faz algo à mão com o agente várias vezes, construa uma ferramenta para isso (CLI, script de verificação, etc.) |
