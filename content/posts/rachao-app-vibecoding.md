@@ -1,6 +1,8 @@
 ---
 title: "rachao.app — Um problema real, resolvido ponta a ponta com IA/Vibecoding supervisionado (sabor SaaS)"
 date: 2026-03-16
+description: "Um problema real resolvido ponta a ponta com IA/vibecoding supervisionado: o rachao.app, de ideia na gaveta a SaaS no ar em 15 dias, a ~3 horas por dia."
+images: ["/images/og/rachao-app-campo.jpg"]
 tags:
   - rachao.app
   - vibecoding

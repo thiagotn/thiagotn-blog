@@ -1,6 +1,8 @@
 ---
 title: "FFmpeg e VLC: O Software que Ninguém Conhece e Todo Mundo Usa"
 date: 2026-05-21
+description: "Um resumo do Lex Fridman Podcast #496 com Jean-Baptiste Kempf (VLC) e Kieran Cunha: o que é o FFmpeg, por que ele move o vídeo da internet inteira e quase ninguém sabe disso."
+images: ["/images/og/ffmpeg-vlc-lex-fridman.jpg"]
 tags:
   - ffmpeg
   - vlc

@@ -1,6 +1,8 @@
 ---
 title: "Harness Engineering at rachao.app: Building the Scaffold That Makes AI Predictable"
 date: 2026-05-29
+description: "Supervised vibecoding only scales with structure. How I built the scaffold at rachao.app — tests, contracts, conventions — that makes AI-generated code predictable."
+images: ["/images/og/harness-engineering-layers.jpg"]
 tags:
   - rachao.app
   - vibecoding

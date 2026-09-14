@@ -1,6 +1,7 @@
 ---
 title: "Resumo: Como confiar em agents de IA para escrever código — a analogia com gestão de pessoas (Lauren Tan / Cursor)"
 date: 2026-09-02
+description: "Resumo da palestra de Lauren Tan (Cursor): gerenciar agents de IA se parece muito com gerenciar pessoas — e como sair do micromanagement para a confiança."
 tags: ["engenharia", "ia", "agentes", "gestão"]
 ---
 

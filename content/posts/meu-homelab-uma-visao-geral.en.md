@@ -1,6 +1,8 @@
 ---
 title: "My homelab: an overview"
 date: 2026-06-27
+description: "A mini PC running Kubernetes at home: what it hosts, how it is put together, and why a homelab is the best lab for learning infrastructure hands-on."
+images: ["/images/og/homelab.jpg"]
 slug: "my-homelab-an-overview"
 tags:
   - homelab

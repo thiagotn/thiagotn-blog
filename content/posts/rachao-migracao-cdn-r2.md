@@ -1,6 +1,7 @@
 ---
 title: "Migrando a CDN de imagens do rachao.app — do Supabase Storage para o Cloudflare R2"
 date: 2026-08-01
+description: "O último serviço do Supabase saiu do rachao.app: como migrei o storage de avatares para o Cloudflare R2 e fechei o ciclo de soberania da stack no homelab."
 tags:
   - rachao.app
   - cloudflare

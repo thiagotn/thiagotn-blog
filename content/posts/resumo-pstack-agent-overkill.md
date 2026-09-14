@@ -1,6 +1,7 @@
 ---
 title: "Resumo: Pstack Is Agent Overkill. Use It Anyway! (Rob Shocks)"
 date: 2026-09-11
+description: "Resumo do vídeo de Rob Shocks sobre o Pstack, o conjunto de skills de Lauren Tan: é overkill para a maioria dos agentes, e ainda assim vale a pena ler e usar."
 tags: ["agentes", "ia", "engenharia", "produtividade"]
 ---
 

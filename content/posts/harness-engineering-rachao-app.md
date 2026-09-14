@@ -1,6 +1,8 @@
 ---
 title: "Harness Engineering no rachao.app: como construir o andaime que torna a IA previsível"
 date: 2026-05-29
+description: "Vibecoding supervisionado só escala com estrutura. Como montei no rachao.app o andaime — testes, contratos, convenções — que torna o código gerado por IA previsível."
+images: ["/images/og/harness-engineering-layers.jpg"]
 tags:
   - rachao.app
   - vibecoding

@@ -1,6 +1,7 @@
 ---
 title: "Resumo: Google Play anuncia novos requisitos de qualidade — otimização de memória e migração segura de dispositivos (Android Developers Blog)"
 date: 2026-08-30
+description: "Resumo do anúncio do Google Play: dois novos requisitos de qualidade para apps Android — consumo de memória e migração segura entre dispositivos, com prazos em 2027."
 tags: ["android", "desenvolvimento-mobile", "google-play"]
 ---
 

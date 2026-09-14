@@ -1,6 +1,8 @@
 ---
 title: "MCP em produção no rachao.app: expondo a API do rachão para agentes de IA"
 date: 2026-07-27
+description: "Como coloquei um servidor MCP em produção no rachao.app com Python e FastMCP, expondo a API do rachão para agentes de IA — e o que isso ensina na prática."
+images: ["/images/og/rachao-app-logo.jpg"]
 tags:
   - rachao.app
   - mcp

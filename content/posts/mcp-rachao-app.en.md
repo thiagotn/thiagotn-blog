@@ -1,6 +1,8 @@
 ---
 title: "MCP in production at rachao.app: exposing the pickup-football API to AI agents"
 date: 2026-07-27
+description: "How I put an MCP server in production at rachao.app with Python and FastMCP, exposing the pickup-football API to AI agents — and what that taught me in practice."
+images: ["/images/og/rachao-app-logo.jpg"]
 tags:
   - rachao.app
   - mcp

@@ -1,6 +1,8 @@
 ---
 title: "Summary: Ex-Anthropic Researcher Warns AI Could Exterminate Humanity by 2030 (CNN)"
 date: 2026-09-10
+description: "A summary of the CNN story: Jacob Coxon left Anthropic warning that AI could exterminate humanity by 2030 — and an alignment scientist agreed with him."
+images: ["/images/og/ia-risco-extincao.jpg"]
 tags: ["ai", "safety", "anthropic", "alignment"]
 ---
 

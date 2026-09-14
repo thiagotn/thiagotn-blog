@@ -25,7 +25,6 @@ params:
   extra:
     poweredby: true
     highlightjs: true
-    socialmarkup: true
     toc: true
     displayrssicon: true
 
@@ -39,6 +38,8 @@ languages:
       intro: "Engenheiro de software. Escrevo sobre software, infraestrutura e o que mais der vontade. Opiniões minhas, não do meu empregador."
       description: "Blog pessoal do Thiago Nogueira (thiagotn) — software, infraestrutura e o que mais der vontade."
       dateformat: "2 Jan 2006"
+      # Fallback de og:image para páginas sem `images:` no front matter.
+      images: ["images/og-default.png"]
       meta:
         description: "Blog pessoal do Thiago Nogueira (thiagotn) — software, infraestrutura e o que mais der vontade."
         keywords: "software,infraestrutura,homelab,kubernetes,vibecoding,ia,open-source,blog pessoal"
@@ -63,6 +64,7 @@ languages:
       intro: "Software engineer. I write about software, infrastructure and whatever else I feel like. My opinions, not my employer's."
       description: "Personal blog of Thiago Nogueira (thiagotn) — software, infrastructure and whatever else."
       dateformat: "Jan 2, 2006"
+      images: ["images/og-default-en.png"]
       meta:
         description: "Personal blog of Thiago Nogueira (thiagotn) — software, infrastructure and whatever else."
         keywords: "software,infrastructure,homelab,kubernetes,vibecoding,ai,open-source,personal blog"

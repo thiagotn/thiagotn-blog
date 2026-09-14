@@ -1,6 +1,8 @@
 ---
 title: "Meu homelab: uma visão geral"
 date: 2026-06-27
+description: "Um mini PC rodando Kubernetes em casa: o que ele hospeda, como está montado e por que um homelab é o melhor laboratório para aprender infraestrutura na prática."
+images: ["/images/og/homelab.jpg"]
 tags:
   - homelab
   - kubernetes

@@ -1,6 +1,8 @@
 ---
 title: "rachao.app — Aprendendo Go portando uma API de produção: arquitetura, stack e decisões técnicas"
 date: 2026-07-09
+description: "Por que portei a API do rachao.app de Python/FastAPI para Go: arquitetura, escolha de stack (chi, sqlc, Docker) e as decisões técnicas que aprendi no caminho."
+images: ["/images/og/rachao-app-arquitetura.jpg"]
 tags:
   - rachao.app
   - go

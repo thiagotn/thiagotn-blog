@@ -1,6 +1,7 @@
 ---
 title: "Summary: How to trust AI agents to write code — the management analogy (Lauren Tan / Cursor)"
 date: 2026-09-02
+description: "A summary of Lauren Tan's talk (Cursor): managing AI agents looks a lot like managing people — and how to move from micromanagement to trust."
 tags: ["engineering", "ai", "agents", "management"]
 ---
 

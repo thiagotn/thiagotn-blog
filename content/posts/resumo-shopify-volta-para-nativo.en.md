@@ -1,6 +1,7 @@
 ---
 title: "Summary: Native is now the future of mobile at Shopify (Shopify Engineering)"
 date: 2026-09-13
+description: "A summary of the Shopify Engineering post: after five years betting on React Native, the future of mobile at Shopify is native again — and AI explains much of it."
 tags: ["engineering", "mobile", "ai", "agents"]
 ---
 

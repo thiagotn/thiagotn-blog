@@ -1,6 +1,7 @@
 ---
 title: "Summary: How Technical Should an Engineering Manager Be? (Engineering Leadership)"
 date: 2026-07-13
+description: "A summary of the debate on how technical an Engineering Manager needs to be — and why the lines between architect, staff engineer and EM keep blurring."
 tags:
   - engineering
   - management

@@ -1,6 +1,8 @@
 ---
 title: "The Invisible Software Running the Internet's Video"
 date: 2026-05-21
+description: "A summary of Lex Fridman Podcast #496 with Jean-Baptiste Kempf (VLC) and Kieran Cunha: what FFmpeg really is, and why it quietly powers most of the internet's video."
+images: ["/images/og/ffmpeg-vlc-lex-fridman.jpg"]
 slug: "ffmpeg-vlc-invisible-software"
 tags:
   - ffmpeg

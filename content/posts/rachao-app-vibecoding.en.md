@@ -1,6 +1,8 @@
 ---
 title: "rachao.app — A Real Problem, Solved End-to-End with Supervised AI/Vibecoding (SaaS-flavored)"
 date: 2026-03-18
+description: "A real problem solved end-to-end with supervised AI/vibecoding: rachao.app, from an idea in a drawer to a live SaaS in fifteen days at ~3 hours a day."
+images: ["/images/og/rachao-app-campo.jpg"]
 tags:
   - rachao.app
   - vibecoding

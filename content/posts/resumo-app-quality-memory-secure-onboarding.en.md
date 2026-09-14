@@ -1,6 +1,7 @@
 ---
 title: "Summary: Google Play announces new quality requirements — memory optimization and secure device migration (Android Developers Blog)"
 date: 2026-08-30
+description: "A summary of the Google Play announcement: two new quality requirements for Android apps — memory footprint and secure device migration, with 2027 deadlines."
 tags: ["android", "mobile-development", "google-play"]
 ---
 

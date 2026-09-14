@@ -1,6 +1,7 @@
 ---
 title: "Resumo: Quão técnico deveria ser um Engineering Manager? (Engineering Leadership)"
 date: 2026-07-13
+description: "Resumo do debate sobre o quanto um Engineering Manager precisa ser técnico — e por que as fronteiras entre arquiteto, staff engineer e EM estão cada vez mais borradas."
 tags:
   - engenharia
   - gestão

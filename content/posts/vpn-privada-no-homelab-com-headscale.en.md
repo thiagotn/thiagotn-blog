@@ -1,6 +1,8 @@
 ---
 title: "A private VPN for my homelab: WireGuard, Tailscale and Headscale"
 date: 2026-06-29
+description: "How to administer my homelab from outside the house without exposing the Kubernetes API: a private VPN with WireGuard, Tailscale and a self-hosted Headscale."
+images: ["/images/og/vpn-homelab-arquitetura-en.jpg"]
 slug: "private-vpn-homelab-wireguard-headscale"
 tags:
   - homelab

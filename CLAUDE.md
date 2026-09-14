@@ -27,7 +27,9 @@ There are no tests or linters.
 
 ## Content conventions
 
-- Posts live in `content/posts/`. Each post is a pair: `foo.md` (pt-BR) + `foo.en.md` (English) — Hugo links translations **by filename basename**. Front matter: `title`, `date`, `tags`. New-file archetype is `archetypes/default.md`.
+- Posts live in `content/posts/`. Each post is a pair: `foo.md` (pt-BR) + `foo.en.md` (English) — Hugo links translations **by filename basename**. Front matter: `title`, `date`, `description`, `tags`, and optionally `images`. New-file archetype is `archetypes/default.md`.
+- `description` (per language) feeds both `<meta name="description">` and `og:description` — without it they fall back to Hugo's auto-summary, which truncates mid-sentence. Write one for every new post.
+- `images: ["/images/og/<name>.jpg"]` is the link-preview image (`og:image`). Posts without it fall back to the per-language default card (`languages.<lang>.params.images` in `hugo.yaml`). **Keep OG images 1200×630 and under ~300 KB** — WhatsApp silently drops the thumbnail on heavier files. Full-size originals stay in `static/images/` for the post body; normalized derivatives live in `static/images/og/`.
 - Add `slug:` to a `.en.md` when the public English URL should differ from the PT basename (e.g. `vpn-privada-no-homelab-com-headscale.en.md` has `slug: "private-vpn-homelab-wireguard-headscale"`).
 - Tags are per-language vocabularies on purpose (`ia`/`ai`, `arquitetura`/`architecture`) — `/tags/` and `/en/tags/` are separate taxonomies.
 - Per-language site chrome (intro/bio, meta, copyright, menu labels, `dateformat`) lives under `languages.pt-br` / `languages.en` in `hugo.yaml`; language-neutral params (author, social, structural `extra` flags) stay top-level and are deep-merged.
@@ -38,7 +40,9 @@ There are no tests or linters.
 
 ## Theme overrides (layouts/partials/)
 
-The Goa theme has **no i18n support** (no translation files, hardcoded English strings, `relURL` links that would point EN pages into the PT tree). Six partials are overridden locally, copied from the pinned module commit (`d003cbb6361f`) and minimally patched: `li.html`, `content.html` (localized dates via `time.Format`, i18n strings, `relLangURL` tag/category links), `menu.html` (i18n prev/next/home, language-aware section link), `header.html` (hreflang alternates + language switcher), `sub_footer.html` (per-language RSS feed), `error.html` (translated 404). Each file's top comment says what was patched. **Before bumping the theme module (`hugo mod get -u`), re-diff these six files against upstream.**
+`social-meta.html` is **not** an override — it's a new partial, because the theme emits no Open Graph/Twitter markup at all (and has no `baseof.html`; the whole `<head>` lives in `header.html`). It builds `og:*`/`twitter:*`/`article:*` from `description` + `images`, falling back to the auto-summary and the per-language default card.
+
+The Goa theme has **no i18n support** (no translation files, hardcoded English strings, `relURL` links that would point EN pages into the PT tree). Six partials are overridden locally, copied from the pinned module commit (`d003cbb6361f`) and minimally patched: `li.html`, `content.html` (localized dates via `time.Format`, i18n strings, `relLangURL` tag/category links), `menu.html` (i18n prev/next/home, language-aware section link), `header.html` (hreflang alternates + language switcher + `social-meta.html` call, placed right after `<meta charset>` because the WhatsApp scraper only reads the first few KB; per-page `<meta name="description">` instead of the site-wide one), `sub_footer.html` (per-language RSS feed), `error.html` (translated 404). Each file's top comment says what was patched. **Before bumping the theme module (`hugo mod get -u`), re-diff these six files against upstream.**
 
 ## Deploy pipeline (GitOps)
 

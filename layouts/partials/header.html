@@ -1,4 +1,7 @@
-{{/* Override de hugo-goa@d003cbb6361f: adiciona hreflang alternates (SEO) e o language switcher. Blocos guardados — inertes em modo single-language. */}}
+{{/* Override de hugo-goa@d003cbb6361f: adiciona hreflang alternates (SEO), o language switcher
+     e o partial social-meta.html (Open Graph / Twitter Card — o tema não emite nenhuma).
+     A <meta name="description"> também passou a ser por página, não mais a do site.
+     Blocos guardados — inertes em modo single-language. */}}
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}" data-bs-theme="light">
 
@@ -6,6 +9,8 @@
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+        {{ partial "social-meta.html" . }}
 
         <!-- Anti-FOUC + inline toggle: applies theme before first paint & makes
              toggleTheme() available immediately (no dependency on external JS). -->
@@ -64,7 +69,10 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
 
-        {{ with .Site.Params.meta.description }}
+        {{ $metaDesc := .Description }}
+        {{ if not $metaDesc }}{{ $metaDesc = .Summary }}{{ end }}
+        {{ if not $metaDesc }}{{ $metaDesc = .Site.Params.meta.description }}{{ end }}
+        {{ with $metaDesc | plainify | htmlUnescape | replaceRE `\s+` " " | strings.TrimSpace | truncate 200 }}
         <meta name="description" content="{{ . }}">{{ end }}
         {{ with .Site.Params.meta.keywords }}
         <meta name="keywords" content="{{.}}">{{ end }}

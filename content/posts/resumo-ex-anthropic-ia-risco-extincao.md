@@ -1,6 +1,8 @@
 ---
 title: "Resumo: Ex-pesquisador da Anthropic alerta que IA pode extinguir a humanidade até 2030 (CNN)"
 date: 2026-09-10
+description: "Resumo da reportagem da CNN: Jacob Coxon deixou a Anthropic alertando que a IA pode extinguir a humanidade até 2030 — e um cientista de alinhamento concordou com ele."
+images: ["/images/og/ia-risco-extincao.jpg"]
 tags: ["ia", "segurança", "antropocêntrica", "alinhamento"]
 ---
 
