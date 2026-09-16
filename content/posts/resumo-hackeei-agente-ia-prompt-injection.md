@@ -6,6 +6,8 @@ tags: ["segurança", "inteligência artificial", "prompt injection"]
 
 > **Resumo do vídeo** ["Hackeei um Agente de IA com Prompt Injection"](https://www.youtube.com/watch?v=cCwIk5V5eWs) do canal **Técnicas de Invasão** (Bruno Fraga), publicado em 10 de setembro de 2026. Este post é um resumo detalhado do conteúdo — todos os créditos são do autor original.
 
+![Ilustração de um ataque de prompt injection em um agente de IA, inspirado no universo Matrix](/images/resumo-hackeei-agente-ia-prompt-injection.jpg "Ataque de prompt injection em agente de IA — estilo Matrix")
+
 ---
 
 ## O que é Prompt Injection?
