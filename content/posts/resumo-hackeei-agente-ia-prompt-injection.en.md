@@ -2,6 +2,7 @@
 title: "Summary: I Hacked an AI Agent with Prompt Injection (Técnicas de Invasão)"
 date: 2026-09-16
 tags: ["security", "artificial intelligence", "prompt injection"]
+images: ["/images/resumo-hackeei-agente-ia-prompt-injection.jpg"]
 ---
 
 > **Summary of the video** ["Hackeei um Agente de IA com Prompt Injection"](https://www.youtube.com/watch?v=cCwIk5V5eWs) from the channel **Técnicas de Invasão** (Bruno Fraga), published on September 10, 2026. This post is a detailed summary of the content — all credit goes to the original author.
