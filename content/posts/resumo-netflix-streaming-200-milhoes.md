@@ -1,6 +1,7 @@
 ---
 title: "Resumo: Projetando uma Plataforma de Streaming Escalável para 200 Milhões de Usuários (LinkedIn)"
 date: 2026-09-25
+description: "Resumo do post de Sumit Kumar: a pergunta de system design que a Netflix usa para desafiar engenheiros sênior — como servir 200 milhões de requisições de vídeo em 60 segundos."
 tags: ["arquitetura", "escalabilidade", "streaming", "sistemas distribuídos"]
 ---
 

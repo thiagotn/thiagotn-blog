@@ -1,6 +1,7 @@
 ---
 title: "Resumo: Hackeei um Agente de IA com Prompt Injection (Técnicas de Invasão)"
 date: 2026-09-16
+description: "Resumo do vídeo do canal Técnicas de Invasão: prompt injection no desafio White Rabbit do TryHackMe, manipulando o Agente Smith por mensagem para extrair informação restrita."
 tags: ["segurança", "inteligência artificial", "prompt injection"]
 images: ["/images/resumo-hackeei-agente-ia-prompt-injection.jpg"]
 ---

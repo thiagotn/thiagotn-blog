@@ -1,6 +1,7 @@
 ---
 title: "Summary: Designing a Scalable Video Streaming Platform for 200 Million Users (LinkedIn)"
 date: 2026-09-25
+description: "A summary of Sumit Kumar's post: the system design question Netflix uses to challenge senior engineers — how to serve 200 million video requests in 60 seconds."
 tags: ["architecture", "scalability", "streaming", "distributed systems"]
 ---
 
