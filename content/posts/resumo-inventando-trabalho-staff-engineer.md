@@ -29,9 +29,9 @@ Custo, em dólares, é um sinal óbvio. A conta da nuvem compensa a falta de uma
 
 Para cada centro de custo, entenda como beneficia seu time "terceirizar" aquela função, e o que significaria puxá-la para o escopo do seu time. Essa investigação também funciona no sentido inverso: coisas no seu escopo que deveriam ser repassadas para um fornecedor, uma oferta de nuvem, ou outro time. A lição central é: **comprar versus construir NÃO é uma decisão única; você pode revisitá-la conforme escopo, composição do time, tecnologia e mercado mudam**.
 
-### Seu próprio toil técnico
+### Seu próprio trabalho braçal técnico
 
-Este é o outro custo — invisível para muitos, às vezes incluindo quem lida com o toil técnico. Todo time tem toil técnico, e quase nunca é priorizado. Mas você já sabia disso, então o autor não gasta mais palavras dizendo que toil técnico é um sinal importante de que há trabalho esperando para ser descoberto. A armadilha: **seu toil técnico não é o toil técnico dos seus usuários; corrigir o primeiro melhora a economia unitária, enquanto corrigir o segundo melhora a experiência do usuário**.
+Este é o outro custo — invisível para muitos, às vezes incluindo quem lida com o trabalho braçal técnico. Todo time tem trabalho braçal técnico, e quase nunca é priorizado. Mas você já sabia disso, então o autor não gasta mais palavras dizendo que trabalho braçal técnico é um sinal importante de que há trabalho esperando para ser descoberto. A armadilha: **seu trabalho braçal técnico não é o trabalho braçal técnico dos seus usuários; corrigir o primeiro melhora a economia unitária, enquanto corrigir o segundo melhora a experiência do usuário**.
 
 ---
 
@@ -56,7 +56,7 @@ Em resumo, entrevistas com usuários devem se manter comprometidas em entender c
 
 ### Casos de uso sobrecarregados
 
-Este é o heurístico favorito do autor, do qual ele já falou [em outras oportunidades](https://sujithjay.com/not-aws). Há uma propriedade serendíptica que algumas plataformas possuem: usuários as pressionam para casos de uso para as quais nunca foram projetadas. Você deve investir tempo para entender por que os usuários prefeririam usar sua plataforma para resolver o problema em vez de alternativas (se houver), mesmo que ela nunca tenha sido projetada para isso.
+Este é o heurístico favorito do autor, do qual ele já falou [em outras oportunidades](https://sujithjay.com/not-aws). Há uma propriedade acidental que algumas plataformas possuem: usuários as pressionam para casos de uso para as quais nunca foram projetadas. Você deve investir tempo para entender por que os usuários prefeririam usar sua plataforma para resolver o problema em vez de alternativas (se houver), mesmo que ela nunca tenha sido projetada para isso.
 
 **Trate casos de uso sobrecarregados como protótipos que seus usuários construíram para você**, e descubra quais valem a pena absorver. O teste de validação para absorção é simples: quem mais entre seus usuários tem o mesmo problema?
 
