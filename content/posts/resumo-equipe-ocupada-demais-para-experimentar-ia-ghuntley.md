@@ -109,7 +109,7 @@ Quando você pergunta qual **coding harness** o candidato usa, há duas resposta
 
 Essa é a versão moderna daquela velha pergunta de entrevista: *"Me fale sobre seu home lab"*. Se você sai da entrevista tendo aprendido algo sobre IA que não sabia, **contrate essa pessoa imediatamente** antes que alguém else o faça.
 
-Se a pessoa **lidera pessoas**, ela deveria conseguir ir fundo nos processos que falharam por causa da adoção de IA na empresa — e citar exemplos do que **pessoalmente** mudou na organização para habilitar IA. Verifique essas histórias (background check) para garantir que ninguém está inventando.
+Se a pessoa **lidera pessoas**, ela deveria conseguir ir fundo nos processos que falharam por causa da adoção de IA na empresa — e citar exemplos do que **pessoalmente** mudou na organização para habilitar IA. Verifique essas histórias (verificação de antecedentes) para garantir que ninguém está inventando.
 
 > *"Do not hire left of the line. Start vitality curving existing employees into either AI producers or consumers. Left of the line is NGMI, and that's fine."*
 
