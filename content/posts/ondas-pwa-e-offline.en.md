@@ -3,7 +3,7 @@ title: "Three caches that never mix, and a 55 MB Blob that no longer exists"
 date: 2026-10-19
 description: "A custom Service Worker, streaming downloads with TransformStream, and why filling up the phone needs a different message from losing the network."
 slug: "ondas-pwa-and-offline"
-draft: false
+draft: true
 tags:
   - pwa
   - offline

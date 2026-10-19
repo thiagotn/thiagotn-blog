@@ -3,7 +3,7 @@ title: "O áudio de verdade em 200 bytes — e a barra lisa como resposta honest
 date: 2026-10-19
 description: "RMS de 200 trechos medido em fluxo pelo ffmpeg, um alfabeto de 6 bits compartilhado entre Go e TypeScript por um teste que lê o arquivo do outro, e seis paths de SVG em vez de duzentos nós."
 slug: "ondas-forma-de-onda"
-draft: false
+draft: true
 tags:
   - audio
   - performance

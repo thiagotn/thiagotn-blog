@@ -3,7 +3,7 @@ title: "Nove temas, quatro cores cada, 41 tokens derivados em oklab"
 date: 2026-10-19
 description: "Como gerar um design system inteiro a partir de quatro valores por tema, por que o blur não pode morar na raiz e por que existe um único @media em todo o projeto."
 slug: "ondas-tema-design-system"
-draft: false
+draft: true
 tags:
   - css
   - design-system

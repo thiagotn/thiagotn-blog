@@ -3,7 +3,7 @@ title: "Nine themes, four colours each, 41 tokens derived in oklab"
 date: 2026-10-19
 description: "How to generate an entire design system from four values per theme, why blur cannot live on the root element, and why there is a single @media in the whole project."
 slug: "ondas-theme-design-system"
-draft: false
+draft: true
 tags:
   - css
   - design-system

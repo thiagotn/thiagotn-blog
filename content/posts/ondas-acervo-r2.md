@@ -3,7 +3,7 @@ title: "O caminho do arquivo nunca vem do pedido"
 date: 2026-10-19
 description: "Bucket privado, dono dentro da chave do objeto, envio direto do navegador por URL assinada — e a conferência de tamanho que acontece três vezes porque a assinatura vale quinze minutos."
 slug: "ondas-acervo-r2"
-draft: false
+draft: true
 tags:
   - seguranca
   - go

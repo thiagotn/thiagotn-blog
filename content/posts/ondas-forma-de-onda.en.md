@@ -3,7 +3,7 @@ title: "Real audio in 200 bytes — and the flat bar as the honest answer"
 date: 2026-10-19
 description: "RMS over 200 buckets measured as a stream by ffmpeg, a 6-bit alphabet shared between Go and TypeScript by a test that reads the other language's file, and six SVG paths instead of two hundred nodes."
 slug: "ondas-waveform"
-draft: false
+draft: true
 tags:
   - audio
   - performance

@@ -3,7 +3,7 @@ title: "\"Send me a URL\": closing off a proxy to the internal network"
 date: 2026-10-19
 description: "The SSRF guard runs after DNS, with the chosen IP in hand, and applies to every redirect hop. Plus the SKIP LOCKED queue, a byte ceiling that distrusts Content-Length, and a CREATE TABLE that is not atomic."
 slug: "ondas-ingestion-and-ssrf"
-draft: false
+draft: true
 tags:
   - security
   - go

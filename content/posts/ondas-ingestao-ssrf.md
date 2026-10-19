@@ -3,7 +3,7 @@ title: "\"Me manda uma URL\": como fechar um proxy para a rede interna"
 date: 2026-10-19
 description: "A trava de SSRF roda depois do DNS, com o IP já escolhido, e vale para cada salto de redirect. Mais a fila com SKIP LOCKED, o teto que não acredita no Content-Length e um CREATE TABLE que não é atômico."
 slug: "ondas-ingestao-ssrf"
-draft: false
+draft: true
 tags:
   - seguranca
   - go

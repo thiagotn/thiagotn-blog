@@ -3,7 +3,7 @@ title: "Store the id, never the position: the lesson this project learned three 
 date: 2026-10-19
 description: "Eight stores, two persistence strategies, and a bug that came back three times under different names — because the track list changes size when someone signs in."
 slug: "ondas-state-and-stores"
-draft: false
+draft: true
 tags:
   - architecture
   - react

@@ -3,7 +3,7 @@ title: "Ondas, decision by decision: series index"
 date: 2026-10-19
 description: "A music PWA with its own API, taken apart across thirteen documents: why each tool was chosen, what was rejected, and what every decision cost."
 slug: "ondas-engineering-series"
-draft: false
+draft: true
 tags:
   - architecture
   - engineering

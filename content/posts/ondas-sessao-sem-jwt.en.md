@@ -3,7 +3,7 @@ title: "Why Ondas' session cookie is not a JWT"
 date: 2026-10-19
 description: "An <audio> tag sends no headers. Out of that constraint come the HMAC-signed cookie, the argon2id parameters that dictate the pod's memory limit, and three authorisation layers in the router."
 slug: "ondas-session-cookie-not-jwt"
-draft: false
+draft: true
 tags:
   - security
   - go

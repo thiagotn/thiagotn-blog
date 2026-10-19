@@ -3,7 +3,7 @@ title: "A stack do Ondas: React porque a fase 2 é nativa, e Go porque a imagem 
 date: 2026-10-19
 description: "Por que um player de música escolheu React em vez de Svelte, Go para a API, uma única dependência de runtime no domínio e nenhum framework de CSS — com o custo de cada escolha."
 slug: "ondas-decisoes-de-stack"
-draft: false
+draft: true
 tags:
   - arquitetura
   - react

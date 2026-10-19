@@ -3,7 +3,7 @@ title: "O handoff de design como especificação executável"
 date: 2026-10-19
 description: "Três pacotes de design decidiram a stack, nomearam as interfaces de plataforma e disseram o que não tocar. O que isso muda na execução — e o que o Ondas deixou de fora de propósito."
 slug: "ondas-produto-e-escopo"
-draft: false
+draft: true
 tags:
   - produto
   - arquitetura

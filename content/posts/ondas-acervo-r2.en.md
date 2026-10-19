@@ -3,7 +3,7 @@ title: "A file's path never comes from the request"
 date: 2026-10-19
 description: "A private bucket, the owner inside the object key, uploads straight from the browser via a presigned URL — and the size check that happens three times because the signature is valid for fifteen minutes."
 slug: "ondas-private-library-r2"
-draft: false
+draft: true
 tags:
   - security
   - go

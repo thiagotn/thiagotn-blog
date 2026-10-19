@@ -3,7 +3,7 @@ title: "The CI that never talks to the cluster"
 date: 2026-10-19
 description: "Three images, a tag write-back instead of kubectl, and a YAML selector that fails loudly rather than writing the wrong tag. Plus the nginx that redirects because a proxy_pass would take the site down."
 slug: "ondas-devops-gitops"
-draft: false
+draft: true
 tags:
   - devops
   - gitops

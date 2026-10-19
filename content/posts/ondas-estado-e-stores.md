@@ -3,7 +3,7 @@ title: "Guarde o id, nunca a posição: a lição que este projeto aprendeu trê
 date: 2026-10-19
 description: "Oito stores, duas estratégias de persistência e um bug que voltou três vezes com nomes diferentes — porque a lista de faixas muda de tamanho quando alguém entra na conta."
 slug: "ondas-estado-e-stores"
-draft: false
+draft: true
 tags:
   - arquitetura
   - react

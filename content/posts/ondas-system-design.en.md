@@ -3,7 +3,7 @@ title: "Ondas' system design: three processes and a 302 that saves the home upli
 date: 2026-10-19
 description: "How a static PWA, a Go API and an ffmpeg worker divide the work so audio never crosses a residential tunnel — and which parts can fail alone without taking the others down."
 slug: "ondas-system-design"
-draft: false
+draft: true
 tags:
   - architecture
   - system-design

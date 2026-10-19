@@ -3,7 +3,7 @@ title: "A design handoff as an executable specification"
 date: 2026-10-19
 description: "Three design packages decided the stack, named the platform interfaces and said what not to touch. What that changes about execution — and what Ondas deliberately left out."
 slug: "ondas-product-and-scope"
-draft: false
+draft: true
 tags:
   - product
   - architecture

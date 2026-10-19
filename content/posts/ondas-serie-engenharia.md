@@ -3,7 +3,7 @@ title: "Ondas, decisão por decisão: índice da série"
 date: 2026-10-19
 description: "Um player de música em PWA com API própria, destrinchado em treze documentos: por que cada ferramenta foi escolhida, o que foi descartado e o que cada decisão custou."
 slug: "ondas-serie-engenharia"
-draft: false
+draft: true
 tags:
   - arquitetura
   - engenharia

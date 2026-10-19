@@ -3,7 +3,7 @@ title: "Por que o cookie de sessão do Ondas não é um JWT"
 date: 2026-10-19
 description: "Uma tag <audio> não manda header. Dessa restrição saem o cookie assinado com HMAC, os parâmetros do argon2id que ditam a memória do pod e três camadas de autorização no roteador."
 slug: "ondas-sessao-sem-jwt"
-draft: false
+draft: true
 tags:
   - seguranca
   - go

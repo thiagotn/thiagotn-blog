@@ -3,7 +3,7 @@ title: "Remove the fix and see whether the test complains"
 date: 2026-10-19
 description: "369 tests across three suites, one Postgres schema per test, and four times a test passed without the fix it was meant to guard — including a PSNR measurement that only worked with noise."
 slug: "ondas-qa-manual-mutation"
-draft: false
+draft: true
 tags:
   - testing
   - quality

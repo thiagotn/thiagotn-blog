@@ -3,7 +3,7 @@ title: "Três caches que não se misturam, e um Blob de 55 MB que não existe ma
 date: 2026-10-19
 description: "Service Worker próprio, download em fluxo com TransformStream e por que encher o telefone precisa de uma mensagem diferente de ficar sem rede."
 slug: "ondas-pwa-e-offline"
-draft: false
+draft: true
 tags:
   - pwa
   - offline

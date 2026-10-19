@@ -3,7 +3,7 @@ title: "A domain layer that will not compile if it sees the DOM"
 date: 2026-10-19
 description: "How a tsconfig without the DOM library turns portability into a compile error, and the three injection mechanisms Ondas uses to cross the boundary."
 slug: "ondas-monorepo-and-ports"
-draft: false
+draft: true
 tags:
   - architecture
   - typescript

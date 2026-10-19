@@ -3,7 +3,7 @@ title: "O system design do Ondas: três processos e um 302 que salva o link de c
 date: 2026-10-19
 description: "Como uma PWA estática, uma API Go e um worker com ffmpeg se dividem para que o áudio nunca atravesse um túnel residencial — e quais partes podem cair sozinhas sem derrubar as outras."
 slug: "ondas-system-design"
-draft: false
+draft: true
 tags:
   - arquitetura
   - system-design

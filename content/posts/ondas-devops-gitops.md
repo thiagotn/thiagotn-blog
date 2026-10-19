@@ -3,7 +3,7 @@ title: "O CI que não fala com o cluster"
 date: 2026-10-19
 description: "Três imagens, um write-back de tag em vez de kubectl, e um seletor de YAML que falha alto em vez de escrever a tag errada. Mais o nginx que redireciona porque um proxy_pass derrubaria o site."
 slug: "ondas-devops-gitops"
-draft: false
+draft: true
 tags:
   - devops
   - gitops

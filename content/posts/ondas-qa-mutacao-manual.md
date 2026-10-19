@@ -3,7 +3,7 @@ title: "Tire a correção e veja se o teste reclama"
 date: 2026-10-19
 description: "369 testes em três suítes, um schema de Postgres por teste, e quatro vezes em que o teste passou sem a correção que ele deveria travar — incluindo uma medida de PSNR que só funcionou com ruído."
 slug: "ondas-qa-mutacao-manual"
-draft: false
+draft: true
 tags:
   - testes
   - qualidade

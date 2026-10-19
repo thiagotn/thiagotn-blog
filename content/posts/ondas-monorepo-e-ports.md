@@ -3,7 +3,7 @@ title: "O domínio que não compila se enxergar o DOM"
 date: 2026-10-19
 description: "Como um tsconfig sem a biblioteca do DOM transforma portabilidade em erro de compilação, e os três mecanismos de injeção que o Ondas usa para atravessar a fronteira."
 slug: "ondas-monorepo-e-ports"
-draft: false
+draft: true
 tags:
   - arquitetura
   - typescript

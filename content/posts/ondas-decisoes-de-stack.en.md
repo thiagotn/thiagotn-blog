@@ -3,7 +3,7 @@ title: "Ondas' stack: React because phase 2 is native, and Go because the image 
 date: 2026-10-19
 description: "Why a music player chose React over Svelte, Go for the API, a single runtime dependency in the domain layer and no CSS framework — with the cost of each choice."
 slug: "ondas-stack-decisions"
-draft: false
+draft: true
 tags:
   - architecture
   - react
