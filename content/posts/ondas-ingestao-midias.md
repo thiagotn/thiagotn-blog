@@ -176,7 +176,7 @@ validação técnica.
 forma de onda, sim — ele tem a música. Para o arquivo de áudio, não. Melhor esforço silencioso vira dívida de dados;
 por isso a falha vai para o log.
 
-## Numa entrevista
+## Perguntas de system design
 
 **"Como uma URL vira uma faixa no acervo?"** Depende da URL. Se é mídia direta, o worker do cluster baixa com a trava
 de SSRF, valida o formato com `ffprobe`, extrai metadados e guarda no R2. Se é de página — YouTube, SoundCloud —, quem
