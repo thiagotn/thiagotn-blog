@@ -105,7 +105,7 @@ gargalo inteiro.
 Fazer dele um modo explícito, com seu próprio código e seu próprio nome, foi mais honesto do
 que deixar a UI se arrastar quando o áudio não chega.
 
-## Numa entrevista
+## Perguntas de system design
 
 **"Qual biblioteca de áudio você usa?"** Nenhuma. É o `HTMLAudioElement` do navegador, criado com
 `new Audio()`. A decisão não é qual biblioteca, mas como isolar a escolha: o motor está atrás de

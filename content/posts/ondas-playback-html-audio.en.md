@@ -104,7 +104,7 @@ audio" as an error state. But the demo catalog isn't an error — it's a product
 an explicit mode, with its own code and its own name, was more honest than letting the UI crawl
 when audio doesn't arrive.
 
-## In an interview
+## System design questions
 
 **"Which audio library do you use?"** None. It's the browser's `HTMLAudioElement`, created with
 `new Audio()`. The decision isn't which library, but how to isolate the choice: the engine sits
