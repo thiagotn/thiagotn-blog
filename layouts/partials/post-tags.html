@@ -1,0 +1,13 @@
+{{/* Tags do post. .GetTerms devolve as próprias páginas de termo, então o href sai
+     com o permalink real (com barra final) e já no idioma certo — montar
+     "/tags/" + urlize à mão, como fazia o content.html do tema, gerava URLs sem
+     barra final e apontaria para a árvore PT dentro de /en/. */}}
+{{- $terms := .GetTerms "tags" }}
+{{- if and (ne .Params.showpagemeta false) $terms }}
+<nav class="post-tags" aria-label="{{ i18n "tags" }}">
+  <span class="post-tags__label">{{ i18n "tags" | upper }}</span>
+  {{- range $terms.ByTitle }}
+  <a href="{{ .RelPermalink }}">{{ .Data.Term | default (.Title | lower) }}</a>
+  {{- end }}
+</nav>
+{{- end }}

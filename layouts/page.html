@@ -1,0 +1,28 @@
+{{/* Página única: posts e /about/. Substitui partials/content.html (byline, TOC,
+     tags) e partials/menu.html (prev/next). */}}
+{{ define "main" }}
+<article class="wrap wrap--reading">
+  <header class="post-header">
+    {{ partial "post-meta.html" . }}
+    <h1>{{ .Title }}</h1>
+  </header>
+
+  {{- if and (ne .Params.toc false) (gt .WordCount 300) }}
+  {{ .TableOfContents }}
+  {{- end }}
+
+  <div class="prose">{{ .Content }}</div>
+
+  {{ partial "post-tags.html" . }}
+
+  {{- if .Section }}
+  {{- $prev := .PrevInSection }}{{ $next := .NextInSection }}
+  {{- if or $prev $next }}
+  <nav class="post-nav" aria-label="{{ i18n "pageNavigation" }}">
+    <span class="post-nav__prev">{{ with $prev }}<a href="{{ .RelPermalink }}">&larr; {{ i18n "prev" }}</a>{{ end }}</span>
+    <span class="post-nav__next">{{ with $next }}<a href="{{ .RelPermalink }}">{{ i18n "next" }} &rarr;</a>{{ end }}</span>
+  </nav>
+  {{- end }}
+  {{- end }}
+</article>
+{{ end }}

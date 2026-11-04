@@ -1,0 +1,12 @@
+{{/* Byline do post: "PUBLICADO EM 1 NOV. 2026 / 5 MIN DE LEITURA" em mono 12px.
+     Respeita `showpagemeta: false` (usado em content/about/index.md), senão a
+     página Sobre ganharia data de publicação e tempo de leitura. */}}
+{{- if ne .Params.showpagemeta false }}
+<p class="post-meta">
+  {{- if not .Date.IsZero -}}
+    {{ i18n "publishedOn" | upper }}
+    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ time.Format (default "Jan 2, 2006" .Site.Params.dateformat) .Date | upper }}</time>
+  {{- end -}}
+  {{- with .ReadingTime }} / {{ . }} {{ i18n "minRead" | upper }}{{ end -}}
+</p>
+{{- end }}

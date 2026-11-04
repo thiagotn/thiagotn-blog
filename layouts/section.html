@@ -1,0 +1,7 @@
+{{/* /posts/ — lista completa da seção. Substitui partials/li.html. */}}
+{{ define "main" }}
+<div class="wrap wrap--reading">
+  <h1 class="section-label">{{ .Title }}</h1>
+  {{ partial "post-list.html" (dict "pages" .Pages.ByDate.Reverse) }}
+</div>
+{{ end }}

@@ -18,3 +18,33 @@ notFoundLink:
   other: "here"
 notFoundSuffix:
   other: "to go back to the home page."
+
+# --- site chrome (redesign) ---
+skipToContent:
+  other: "Skip to content"
+mainMenu:
+  other: "Main menu"
+language:
+  other: "Language"
+toggleTheme:
+  other: "Toggle theme"
+themeLight:
+  other: "Theme: light"
+themeDark:
+  other: "Theme: dark"
+themeSystem:
+  other: "Theme: system"
+socialLinks:
+  other: "Social links"
+builtWith:
+  other: "Built with"
+latestPosts:
+  other: "Latest posts"
+seeAllPosts:
+  other: "see all posts"
+allTags:
+  other: "all tags"
+noPosts:
+  other: "Nothing published here yet."
+pageNavigation:
+  other: "Post navigation"

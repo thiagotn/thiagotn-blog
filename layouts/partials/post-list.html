@@ -1,0 +1,25 @@
+{{/* Lista de posts no padrão hairline do omarchy.org/news: sem cards, só uma
+     régua de 1px entre itens. Reusado por home.html, section.html e term.html.
+
+     Uso: {{ partial "post-list.html" (dict "pages" $pages) }} */}}
+{{- $pages := .pages -}}
+{{- with $pages }}
+<ul class="post-list">
+  {{- range . }}
+  <li>
+    <a href="{{ .RelPermalink }}">
+      <time class="post-list__date" datetime="{{ .Date.Format "2006-01-02" }}">
+        {{- time.Format (default "Jan 2, 2006" .Site.Params.dateformat) .Date | upper }}
+        {{- with .ReadingTime }} · {{ . }} {{ i18n "minRead" | upper }}{{ end -}}
+      </time>
+      <span class="post-list__title">{{ .Title }}</span>
+      {{- with .Description }}
+      <span class="post-list__excerpt">{{ . }}</span>
+      {{- end }}
+    </a>
+  </li>
+  {{- end }}
+</ul>
+{{- else }}
+<p class="empty">{{ i18n "noPosts" }}</p>
+{{- end }}

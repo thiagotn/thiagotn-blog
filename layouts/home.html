@@ -1,0 +1,22 @@
+{{/* Home: perfil compacto + posts recentes. Antes era só cartão de visita (foto
+     grande, bio, menu) e os posts existiam apenas em /posts/.
+
+     Não precisa de content/_index.md: .Site.RegularPages já é por idioma e
+     respeita draft. .ByDate.Reverse é explícito de propósito — a ordem default do
+     Hugo é weight→date→linktitle→filepath, e um `weight:` em qualquer post
+     reordenaria a home em silêncio. */}}
+{{ define "main" }}
+{{- $limit := 8 }}
+{{- $posts := (where .Site.RegularPages "Section" "posts").ByDate.Reverse }}
+<div class="wrap wrap--reading">
+  {{ partial "profile.html" . }}
+  {{ partial "social-links.html" . }}
+
+  <h2 class="section-label">{{ i18n "latestPosts" }}</h2>
+  {{ partial "post-list.html" (dict "pages" (first $limit $posts)) }}
+
+  {{- if gt (len $posts) $limit }}
+  <p class="see-all"><a href="{{ "/posts/" | relLangURL }}">{{ i18n "seeAllPosts" }} ({{ len $posts }})</a></p>
+  {{- end }}
+</div>
+{{ end }}

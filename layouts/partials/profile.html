@@ -1,0 +1,19 @@
+{{/* Cabeçalho de perfil compacto da home. A foto é processada via Hugo Pipes
+     (assets/images/eu.jpeg, 400x400/29 KB) para webp 2x: servir o original em
+     56px desperdiçaria ~25 KB. */}}
+<div class="profile">
+  {{- with resources.Get (printf "images/%s" (.Site.Params.authorimage | default "eu.jpeg")) }}
+  {{- $1x := .Fill "112x112 webp q85 Center" }}
+  {{- $2x := .Fill "224x224 webp q85 Center" }}
+  <img class="profile__avatar" src="{{ $1x.RelPermalink }}"
+       srcset="{{ $1x.RelPermalink }} 1x, {{ $2x.RelPermalink }} 2x"
+       width="56" height="56" loading="eager" decoding="async"
+       alt="{{ $.Site.Params.author }}">
+  {{- end }}
+  <div class="profile__text">
+    <p class="profile__name">{{ .Site.Params.author }}</p>
+    {{- with .Site.Params.intro }}
+    <p class="profile__intro">{{ . }}</p>
+    {{- end }}
+  </div>
+</div>

@@ -18,3 +18,33 @@ notFoundLink:
   other: "aqui"
 notFoundSuffix:
   other: "para voltar à página inicial."
+
+# --- chrome do site (redesign) ---
+skipToContent:
+  other: "Pular para o conteúdo"
+mainMenu:
+  other: "Menu principal"
+language:
+  other: "Idioma"
+toggleTheme:
+  other: "Alternar tema"
+themeLight:
+  other: "Tema: claro"
+themeDark:
+  other: "Tema: escuro"
+themeSystem:
+  other: "Tema: sistema"
+socialLinks:
+  other: "Redes sociais"
+builtWith:
+  other: "Feito com"
+latestPosts:
+  other: "Posts recentes"
+seeAllPosts:
+  other: "ver todos os posts"
+allTags:
+  other: "todas as tags"
+noPosts:
+  other: "Nada publicado por aqui ainda."
+pageNavigation:
+  other: "Navegação entre posts"

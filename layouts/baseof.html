@@ -1,0 +1,140 @@
+{{/* Esqueleto único do site. Absorve o que antes eram três partials copiados do
+     hugo-goa (header.html, footer.html, sub_footer.html) e não carrega mais nada
+     de CDN: Bootstrap, Font Awesome, Google Fonts e highlight.js saíram.
+
+     Ordem do <head> é deliberada: social-meta vem imediatamente depois do charset
+     porque o scraper de link preview do WhatsApp lê só os primeiros KB. */}}
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+<meta charset="utf-8">
+{{ partial "social-meta.html" . }}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+{{/* Anti-FOUC: aplica o tema antes do primeiro paint. Dois atributos de propósito:
+     data-theme é o tema efetivo (light|dark) que o CSS usa; data-theme-pref é a
+     preferência (light|dark|system), que deixa o ícone do alternador ser escolhido
+     por CSS puro, sem JS pós-load e sem flash. */}}
+<script>(function(){var k="theme",d=document.documentElement,p=localStorage.getItem(k)||"system";d.setAttribute("data-theme",p==="system"?(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"):p);d.setAttribute("data-theme-pref",p)})()</script>
+
+<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Site.Title }} - {{ .Title }}{{ end }}</title>
+
+{{ $desc := .Description }}
+{{- if not $desc }}{{ $desc = .Summary }}{{ end }}
+{{- if not $desc }}{{ $desc = .Site.Params.meta.description }}{{ end }}
+{{- with $desc | plainify | htmlUnescape | replaceRE `\s+` " " | strings.TrimSpace | truncate 200 }}
+<meta name="description" content="{{ . }}">{{ end }}
+{{- with .Site.Params.meta.keywords }}
+<meta name="keywords" content="{{ . }}">{{ end }}
+
+{{/* Fontes auto-hospedadas com fingerprint. O crossorigin do preload é obrigatório
+     e sem valor: sem ele o preload é descartado e a fonte baixa duas vezes. */}}
+{{- range slice "fonts/jetbrains-mono-latin-wght-normal.woff2" "fonts/geist-latin-wght-normal.woff2" }}
+{{- with resources.Get . }}{{ $f := . | fingerprint "sha256" }}
+<link rel="preload" href="{{ $f.RelPermalink }}" as="font" type="font/woff2" crossorigin>{{ end }}
+{{- end }}
+
+{{/* site.css passa por ExecuteAsTemplate para que os @font-face apontem para as
+     URLs já com hash — um url() estático apontaria para o caminho sem fingerprint
+     e daria 404 silencioso, caindo no monospace do sistema. */}}
+{{- $site := resources.Get "css/site.css" | resources.ExecuteAsTemplate "css/site.css" . }}
+{{- $chroma := resources.Get "css/chroma.css" }}
+{{- $css := slice $site $chroma | resources.Concat "css/site.css" | minify | fingerprint "sha256" }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+
+<meta name="theme-color" content="#1a1b26" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#eff1f5" media="(prefers-color-scheme: light)">
+
+{{ hugo.Generator }}
+{{- range .AlternativeOutputFormats }}
+<link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" title="{{ $.Site.Title }}" href="{{ .Permalink | safeURL }}">
+{{- end }}
+{{- if .IsTranslated }}
+{{- range .AllTranslations }}
+<link rel="alternate" hreflang="{{ .Language.LanguageCode }}" href="{{ .Permalink }}">
+{{- end }}
+<link rel="alternate" hreflang="x-default" href="{{ (index .AllTranslations 0).Permalink }}">
+{{- end }}
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+
+<body>
+<a class="skip-link" href="#main">{{ i18n "skipToContent" }}</a>
+
+<header class="site-header">
+  <div class="site-header__bar">
+    <a class="wordmark" href="{{ "/" | relLangURL }}">{{ .Site.Title }}</a>
+
+    <nav class="nav-main" aria-label="{{ i18n "mainMenu" }}">
+      {{- range .Site.Menus.main }}
+      {{- $active := false }}
+      {{- with .Page }}{{ $active = or ($.IsDescendant .) (eq $.RelPermalink .RelPermalink) }}{{ end }}
+      <a href="{{ .URL }}"{{ if $active }} aria-current="page"{{ end }}>{{ .Name }}</a>
+      {{- end }}
+    </nav>
+
+    <div class="site-header__end">
+      {{- if gt (len .Site.Sites) 1 }}
+      {{- $labels := dict "pt-br" "pt-BR" "en" "EN" }}
+      <nav class="lang-switcher" aria-label="{{ i18n "language" }}">
+        {{- if .IsTranslated }}
+        {{- range .Translations }}
+        <a href="{{ .RelPermalink }}" hreflang="{{ .Language.LanguageCode }}" lang="{{ .Language.LanguageCode }}">{{ index $labels .Language.Lang | default .Language.LanguageName }}</a>
+        {{- end }}
+        {{- else }}
+        {{- range .Site.Sites }}{{ if ne .Language.Lang $.Site.Language.Lang }}
+        <a href="{{ .Home.RelPermalink }}" hreflang="{{ .Language.LanguageCode }}" lang="{{ .Language.LanguageCode }}">{{ index $labels .Language.Lang | default .Language.LanguageName }}</a>
+        {{- end }}{{ end }}
+        {{- end }}
+      </nav>
+      {{- end }}
+
+      <button id="theme-toggle" class="icon-btn" type="button"
+              aria-label="{{ i18n "toggleTheme" }}"
+              data-label-light="{{ i18n "themeLight" }}"
+              data-label-dark="{{ i18n "themeDark" }}"
+              data-label-system="{{ i18n "themeSystem" }}">
+        {{- partial "icon.html" (dict "name" "sun" "size" 17 "class" "ico-light") -}}
+        {{- partial "icon.html" (dict "name" "moon" "size" 17 "class" "ico-dark") -}}
+        {{- partial "icon.html" (dict "name" "half" "size" 17 "class" "ico-system") -}}
+      </button>
+
+      {{- if ne .Site.Params.extra.displayrssicon false }}
+      <a class="icon-btn" href="{{ "index.xml" | relLangURL }}" aria-label="{{ i18n "rssFeed" }}">
+        {{- partial "icon.html" (dict "name" "rss" "size" 15) -}}
+      </a>
+      {{- end }}
+      {{- with .Site.Params.social.github }}
+      <a class="icon-btn" href="https://github.com/{{ . }}" rel="me noopener" target="_blank" aria-label="GitHub">
+        {{- partial "icon.html" (dict "name" "github" "size" 17) -}}
+      </a>
+      {{- end }}
+    </div>
+  </div>
+</header>
+
+<main id="main">{{ block "main" . }}{{ end }}</main>
+
+<footer class="site-footer">
+  {{- with .Site.Params.extra.copyright }}
+  <p class="copyright">{{ . | markdownify }}</p>
+  {{- end }}
+  {{- if ne .Site.Params.extra.poweredby false }}
+  <p class="powered">{{ i18n "builtWith" }} <a href="https://gohugo.io/" rel="noopener">Hugo</a></p>
+  {{- end }}
+</footer>
+
+{{/* Ciclo do alternador de tema. Inline porque são 12 linhas e o nginx cacheia
+     .js por 30 dias — um arquivo separado precisaria de cache-busting próprio. */}}
+<script>(function(){var k="theme",d=document.documentElement,b=document.getElementById("theme-toggle");if(!b)return;
+function label(p){b.setAttribute("aria-label",b.getAttribute("data-label-"+p)||p)}
+function apply(p){localStorage.setItem(k,p);d.setAttribute("data-theme-pref",p);d.setAttribute("data-theme",p==="system"?(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"):p);label(p)}
+label(localStorage.getItem(k)||"system");
+b.addEventListener("click",function(){var c=localStorage.getItem(k)||"system";apply(c==="light"?"dark":c==="dark"?"system":"light")});
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change",function(){if((localStorage.getItem(k)||"system")==="system")apply("system")})})()</script>
+</body>
+</html>

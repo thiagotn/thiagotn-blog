@@ -1,0 +1,15 @@
+{{/* Links sociais. O hugo.yaml define só github e linkedin (o social.html do tema
+     carregava 43 ícones, todos inertes). */}}
+{{- $social := .Site.Params.social -}}
+{{- $urls := dict "github" "https://github.com/%s" "linkedin" "https://www.linkedin.com/in/%s" -}}
+{{- if $social }}
+<nav class="social" aria-label="{{ i18n "socialLinks" }}">
+  {{- range $net, $tmpl := $urls }}
+  {{- with index $social $net }}
+  <a href="{{ printf $tmpl . }}" rel="me noopener" target="_blank" aria-label="{{ $net | title }}">
+    {{- partial "icon.html" (dict "name" $net "size" 18) -}}
+  </a>
+  {{- end }}
+  {{- end }}
+</nav>
+{{- end }}

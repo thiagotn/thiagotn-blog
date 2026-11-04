@@ -1,0 +1,8 @@
+{{/* 404. Substitui partials/error.html. O nginx serve este arquivo via
+     `error_page 404 /404.html`, e /en/ tem bloco próprio para o /en/404.html. */}}
+{{ define "main" }}
+<div class="wrap wrap--reading error-page">
+  <p class="error-page__code">404</p>
+  <p>{{ i18n "notFoundText" }} <a href="{{ "/" | relLangURL }}">{{ i18n "notFoundLink" }}</a> {{ i18n "notFoundSuffix" }}</p>
+</div>
+{{ end }}

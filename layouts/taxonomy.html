@@ -1,0 +1,14 @@
+{{/* /tags/ — nuvem tipográfica de termos. As taxonomias são vocabulários
+     separados por idioma de propósito (ia/ai, arquitetura/architecture). */}}
+{{ define "main" }}
+<div class="wrap wrap--reading">
+  <h1 class="section-label">{{ i18n "allTags" }}</h1>
+  <ul class="term-list">
+    {{- range .Data.Terms.Alphabetical }}
+    <li>
+      <a href="{{ .Page.RelPermalink }}">{{ .Page.Data.Term | default (.Page.Title | lower) }}<span class="term-list__count">{{ .Count }}</span></a>
+    </li>
+    {{- end }}
+  </ul>
+</div>
+{{ end }}

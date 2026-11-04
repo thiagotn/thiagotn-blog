@@ -1,0 +1,9 @@
+{{/* /tags/<tag>/ — posts de um termo, na mesma lista de hairlines da home. */}}
+{{ define "main" }}
+<div class="wrap wrap--reading">
+  <p class="section-label">{{ i18n "tags" }}</p>
+  <h1 class="term-title">{{ .Data.Term | default (.Title | lower) }}</h1>
+  {{ partial "post-list.html" (dict "pages" .Pages.ByDate.Reverse) }}
+  <p class="see-all"><a href="{{ "/tags/" | relLangURL }}">{{ i18n "allTags" }}</a></p>
+</div>
+{{ end }}
